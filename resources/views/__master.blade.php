@@ -28,6 +28,9 @@
             $('#__close__btn__food__image__').on('click',function(){
                 $('.image__focus').css({'display':'none'})
             })
+            $('#MODAL_CLOSE_Edit__BTN').on('click',function(){
+                $('.Edit__Modal__category__').css({'display':'none'})
+            })
         })
         const __get__id = (data) => {
             console.log(data)

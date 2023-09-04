@@ -27,6 +27,7 @@ Route::get('/music/destroy/{id}', [__Home_Controller::class, '__Music_destroy'])
 Route::get('/wallpaper/status/{id}', [__Home_Controller::class, '__Wallpaper_Status'])->middleware('__user_authentication')->name('__Wallpaper_Status');
 Route::get('/wallpaper/destroy/{id}', [__Home_Controller::class, '__Wallpaper_destroy'])->middleware('__user_authentication')->name('__Wallpaper_destroy');
 Route::get('/categories/destroy/{id}', [__Home_Controller::class, '__Category_destroy'])->middleware('__user_authentication')->name('__Category_destroy');
+Route::get('/categories/edit/{id}', [__Home_Controller::class, '__Category_edit__'])->middleware('__user_authentication')->name('__Category_edit__');
 
 /* POST__METHODS */
 Route::post('/auth', [__Home_Controller::class, '__user_authentication']);

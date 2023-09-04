@@ -154,7 +154,7 @@ class __Home_Controller extends Controller
 
     public function __update_list(Request $request)
     {
-        
+
         $validator = Validator::make($request->all(), [
             'lang' => 'required',
             'title' => 'required',
@@ -182,7 +182,7 @@ class __Home_Controller extends Controller
         } else {
             $__upload__status = true;
         }
-        
+
         if ($__upload__status) {
             $update = ListsModel::find($request->id);
             $update->lang = $request->lang;
@@ -361,7 +361,13 @@ class __Home_Controller extends Controller
         $__Wallpaper = __Wallpaper_Model::where('status', 1)->get();
         return view('__menu_page', compact('__categories', '__lists', '__Music', '__Wallpaper'));
     }
-    public function __api__List_Edit($id){
-        return response()->json(['id'=>$__Record = ListsModel::find($id)->image]);
+    public function __api__List_Edit($id)
+    {
+        return response()->json(['id' => $__Record = ListsModel::find($id)->image]);
+    }
+    public function __Category_edit__($id)
+    {
+        $__Categories_data__edit__ = CategoriesModel::find($id);
+        return back()->with('__Categories_data__edit__',$__Categories_data__edit__);
     }
 }

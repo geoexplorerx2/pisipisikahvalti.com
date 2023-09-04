@@ -47,6 +47,10 @@
             </div>
         </form>
     </div>
+    {{ session('__Categories_data__edit__') }}
+    @if(session('__Categories_data__edit__')!=null)
+        @include('__category_edit')
+    @endif
     {{-- List Of Categories  --}}
     <div class="w-full">
         <div class="w-full h-[50px] bg-[#1A5276] flex justify-between items-center">
@@ -90,7 +94,7 @@
                                 <td class="p-3 px-5">{{ $item->title }}</td>
                                 <td class="p-3 px-5"><img style="width: 5%;height:5%;border-radius:10px;" src="{{ session('auth')['HTTP_HOST'].'public/uploads/'.$item->image }}" /></td>
                                 <td class="">
-                                    <a href="{{ route('__Category_destroy',['id'=>$item->id]) }}"><button type="button" class="text-sm bg-[#0080ff] text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Edit</button></a>
+                                    <a href="{{ route('__Category_edit__',['id'=>$item->id]) }}"><button type="button" class="text-sm bg-[#0080ff] text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Edit</button></a>
                                     <a href="{{ route('__Category_destroy',['id'=>$item->id]) }}"><button type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button></a>
                                 </td>
                             </tr>
