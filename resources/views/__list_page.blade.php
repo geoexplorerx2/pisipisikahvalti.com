@@ -12,9 +12,19 @@
         @include('__edit__modal')
     </div>
     @endif
-    <div class="image__focus hidden absolute top-0 w-full min-h-screen z-40 bg-black opacity-[.5] justify-center items-center"></div>
-    <div class="image__focus" style="width: 100%;min-height:100vh;position:absolute;top:0;left:0;display:none;justify-content:center;align-items: center;">
-
+    <div class="image__focus hidden absolute top-0 w-full min-h-screen z-50 justify-center items-center bg-[rgba(0,0,0,0.7)]">
+        <div class="bg-white rounded-xl p-4">
+            <div class="text-white">
+                <svg id="__close__btn__food__image__" class="mb-5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" height="30px" width="30px" version="1.1" id="Layer_1" viewBox="0 0 512 512" xml:space="preserve">
+                    <g>
+                        <g>
+                            <polygon points="512,59.076 452.922,0 256,196.922 59.076,0 0,59.076 196.922,256 0,452.922 59.076,512 256,315.076 452.922,512     512,452.922 315.076,256   " />
+                        </g>
+                    </g>
+                </svg>
+                <div id="__image__render__section__" class="rounded-xl bg-white flex justify-center items-center"></div>
+            </div>
+        </div>
     </div>
     {{-- List Of Categories  --}}
     <div class="w-full">

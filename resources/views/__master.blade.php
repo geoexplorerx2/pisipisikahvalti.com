@@ -25,6 +25,9 @@
                     'display': 'none'
                 })
             })
+            $('#__close__btn__food__image__').on('click',function(){
+                $('.image__focus').css({'display':'none'})
+            })
         })
         const __get__id = (data) => {
             console.log(data)
@@ -32,7 +35,9 @@
                 type:'GET',
                 url: "{{ env('HOST_NAME') }}" + "list/ajax/" + data
                 , success: function(result) {
-                    console.log(result)
+                    console.log(result.id)
+                    $('.image__focus').css({'display':'flex'})
+                    $('#__image__render__section__').html(`<img src="{{ env('HOST_NAME') }}uploads/${result.id}"/>`)
                 }
             });
         }
