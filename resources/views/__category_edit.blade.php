@@ -1,6 +1,7 @@
+
 <div class="Edit__Modal__category__ absolute top-0 w-full min-h-screen z-40 bg-black opacity-[.5] justify-center items-center"></div>
 <div class="Edit__Modal__category__ flex absolute top-0 w-full min-h-screen z-50 justify-center items-center">
-    <form class="w-[30%] p-3 bg-slate-100 rounded-md" method="post" action="{{ route('__upload') }}" enctype="multipart/form-data">
+    <form class="w-[30%] p-3 bg-slate-100 rounded-md" method="post" action="{{ route('__upload__') }}" enctype="multipart/form-data">
         @csrf
         <div id="MODAL_CLOSE_Edit__BTN" class="w-full flex justify-end my-1">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30px" width="30px" version="1.1" id="Capa_1" viewBox="0 0 26 26" xml:space="preserve">
@@ -13,14 +14,14 @@
             <label for="language" class="block mb-2 text-sm font-medium text-[#000]">Select an option</label>
             <select name="lang" id="language" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option selected>Choose a Language</option>
-                <option value="TR">TR</option>
-                <option value="EN">EN</option>
-                <option value="AR">AR</option>
+                <option @if(json_decode(json_encode(session('__Categories_data__edit__')), true)['lang']=='TR') {{ 'selected' }} @endif value="TR">TR</option>
+                <option @if(json_decode(json_encode(session('__Categories_data__edit__')), true)['lang']=='EN') {{ 'selected' }} @endif value="EN">EN</option>
+                <option @if(json_decode(json_encode(session('__Categories_data__edit__')), true)['lang']=='AR') {{ 'selected' }} @endif value="AR">AR</option>
             </select>
         </div>
         <div class="w-full mt-3">
             <label for="default-input" class="block mb-2 text-sm font-medium text-[#000]">Title</label>
-            <input name="title" type="text" id="default-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <input name="title" type="text" id="default-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{ json_decode(json_encode(session('__Categories_data__edit__')), true)['title'] }}">
         </div>
         <div class="w-full mt-3">
             <div class="flex items-center justify-center w-full">
