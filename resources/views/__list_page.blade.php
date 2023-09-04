@@ -12,6 +12,10 @@
         @include('__edit__modal')
     </div>
     @endif
+    <div class="image__focus hidden absolute top-0 w-full min-h-screen z-40 bg-black opacity-[.5] justify-center items-center"></div>
+    <div class="image__focus" style="width: 100%;min-height:100vh;position:absolute;top:0;left:0;display:none;justify-content:center;align-items: center;">
+
+    </div>
     {{-- List Of Categories  --}}
     <div class="w-full">
         <div class="w-full h-[50px] bg-[#1A5276] flex justify-between items-center">
@@ -63,7 +67,8 @@
                                 <td class="p-3 px-5" title="{{ $item->contentBody }}">
                                     {{ substr($item->contentBody, 1, 18) }} . . .</td>
                                 <td class="p-3 px-5">{{ $item->price }}</td>
-                                <td class="p-3 px-5"><img style="width: 40px;height:40px;border-radius:40px;" src="{{ session('auth')['HTTP_HOST'].'public/uploads/'.$item->image }}" />
+                                <td class="p-3 px-5">
+                                    <img class="cursor-pointer" onClick="__get__id({{ $item->id }})" style="width: 40px;height:40px;border-radius:40px;" src="{{ session('auth')['HTTP_HOST'].'public/uploads/'.$item->image }}" />
                                 </td>
                                 <td class="p-3 px-5">{{ $item->type }}</td>
                                 <td class="p-3 px-5">
@@ -96,4 +101,5 @@
     </div>
 </div>
 @include('__menu')
+
 @endsection

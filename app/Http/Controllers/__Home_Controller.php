@@ -361,4 +361,7 @@ class __Home_Controller extends Controller
         $__Wallpaper = __Wallpaper_Model::where('status', 1)->get();
         return view('__menu_page', compact('__categories', '__lists', '__Music', '__Wallpaper'));
     }
+    public function __api__List_Edit($id){
+        return response()->json(['id'=>$__Record = ListsModel::find($id)->image]);
+    }
 }
