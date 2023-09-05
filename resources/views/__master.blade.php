@@ -137,9 +137,9 @@
                 `
                 <div class="w-[30%] h-[150px] bg-white rounded-md">
                     <div class="text-xl p-5">Are Your Sure To Remove This Record ?</div>
-                    <div class="flex px-5">
-                        <a href="${"{{ env('HOST_NAME') }}"}wallpaper/destroy/${data}"><button type="button" class="text-sm mr-5 bg-[#1B4F72] hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">OK</button></a>
+                    <div class="flex justify-between px-5">
                         <button id="__close__btn__confirmation__" type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">Close</button>
+                        <a href="${"{{ env('HOST_NAME') }}"}wallpaper/destroy/${data}"><button type="button" class="text-sm mr-5 bg-[#1B4F72] hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">OK</button></a>
                     </div>
                 </div>
                 `
