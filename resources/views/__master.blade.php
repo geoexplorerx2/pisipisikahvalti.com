@@ -135,11 +135,32 @@
         const __delete__wallpaper__function__ = (data) => {
             $('.__delete__confirmation__').html(
                 `
-                <div class="w-[30%] h-[150px] bg-white rounded-md">
+                <div class="w-[30%] h-[120px] bg-white rounded-md">
                     <div class="text-xl p-5">Are Your Sure To Remove This Record ?</div>
                     <div class="flex justify-between px-5">
                         <button id="__close__btn__confirmation__" type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">Close</button>
                         <a href="${"{{ env('HOST_NAME') }}"}wallpaper/destroy/${data}"><button type="button" class="text-sm mr-5 bg-[#1B4F72] hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">OK</button></a>
+                    </div>
+                </div>
+                `
+            )
+            $('#__close__btn__confirmation__').on('click', function() {
+                $('.__delete__confirmation__').css({
+                    'display': 'none'
+                })
+            })
+            $('.__delete__confirmation__').css({
+                'display': 'flex'
+            })
+        }
+        const __delete__music__function__ = (data) => {
+            $('.__delete__confirmation__').html(
+                `
+                <div class="w-[30%] h-[120px] bg-white rounded-md">
+                    <div class="text-xl p-5">Are Your Sure To Remove This Record ?</div>
+                    <div class="flex justify-between px-5">
+                        <button id="__close__btn__confirmation__" type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">Close</button>
+                        <a href="${"{{ env('HOST_NAME') }}"}music/destroy/${data}"><button type="button" class="text-sm mr-5 bg-[#1B4F72] hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">OK</button></a>
                     </div>
                 </div>
                 `

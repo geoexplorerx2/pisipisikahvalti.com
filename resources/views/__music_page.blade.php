@@ -26,6 +26,9 @@
             </button>
         </form>
     </div>
+    <div class="__delete__confirmation__ absolute top-0 w-full min-h-screen z-40 hidden justify-center items-center bg-[rgba(0,0,0,0.7)]">
+
+    </div>
     <div class="w-full">
         <div class="w-full h-[50px] bg-[#1A5276] flex justify-between items-center">
             <div class="w-[20%] text-white text-base px-10">Add Music</div>
@@ -75,7 +78,7 @@
                                 </td>
                                 <td class="">
                                     <a href="{{ route('__Music_Status', ['id' => $item->id]) }}"><button type="button" class="text-sm bg-[#1F618D]  text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">{{ $item->status==true ? 'Selected':'Select' }}</button></a>
-                                    <a href="{{ route('__Music_destroy', ['id' => $item->id]) }}"><button type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button></a>
+                                    <button onClick="__delete__music__function__({{ $item->id }})" type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button>
                                 </td>
                             </tr>
                             @php
