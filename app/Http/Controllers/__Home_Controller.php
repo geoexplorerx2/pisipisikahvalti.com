@@ -369,6 +369,10 @@ class __Home_Controller extends Controller
     {
         return response()->json(['id' => $__Record = CategoriesModel::find($id)->image]);
     }
+    public function __api__wallpaper_Edit($id)
+    {
+        return response()->json(['id' => $__Record = __Wallpaper_Model::find($id)->image]);
+    }
     public function __Category_edit__($id)
     {
         $__Categories_data__edit__ = CategoriesModel::find($id);

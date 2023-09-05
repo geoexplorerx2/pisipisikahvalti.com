@@ -26,6 +26,20 @@
             </button>
         </form>
     </div>
+    <div class="image__focus hidden absolute top-0 w-full min-h-screen z-50 justify-center items-center bg-[rgba(0,0,0,0.7)]">
+        <div class="bg-white rounded-xl p-4">
+            <div class="text-white">
+                <svg id="__close__btn__food__image__" class="mb-5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" height="30px" width="30px" version="1.1" id="Layer_1" viewBox="0 0 512 512" xml:space="preserve">
+                    <g>
+                        <g>
+                            <polygon points="512,59.076 452.922,0 256,196.922 59.076,0 0,59.076 196.922,256 0,452.922 59.076,512 256,315.076 452.922,512     512,452.922 315.076,256   " />
+                        </g>
+                    </g>
+                </svg>
+                <div id="__image__render__section__" class="rounded-xl bg-white flex justify-center items-center"></div>
+            </div>
+        </div>
+    </div>
     <div class="w-full">
         <div class="w-full h-[50px] bg-[#1A5276] flex justify-between items-center">
             <div class="w-[20%] text-white text-base px-10">Add Wallpaper</div>
@@ -64,7 +78,7 @@
                             <tr class="border-b hover:bg-orange-100 bg-gray-100">
                                 <td class="p-3 px-5">{{ $counter }}</td>
                                 <td class="p-3 px-5">{{ $item->wallpaper }}</td>
-                                <td class="p-3 px-5"><img style="width: 40px;height:40px;border-radius:40px;" src="{{ session('auth')['HTTP_HOST'].'public/uploads/'.$item->wallpaper }}" />
+                                <td class="p-3 px-5"><img class="cursor-pointer" onClick="__get__id__wallpaper__({{ $item->id }})" style="width: 40px;height:40px;border-radius:40px;" src="{{ session('auth')['HTTP_HOST'].'public/uploads/'.$item->wallpaper }}" />
                                 <td class="">
                                     <a href="{{ route('__Wallpaper_Status', ['id' => $item->id]) }}"><button type="button" class="text-sm bg-[#1F618D]  text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">{{ $item->status==true ? 'Selected':'Select' }}</button></a>
                                     <a href="{{ route('__Wallpaper_destroy', ['id' => $item->id]) }}"><button type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button></a>
