@@ -65,6 +65,15 @@
             </div>
         </div>
     </div>
+    <div class="__delete__confirmation__ absolute top-0 w-full min-h-screen z-50 flex justify-center items-center bg-[rgba(0,0,0,0.7)]">
+        <div class="w-[30%] h-[150px] bg-white rounded-md">
+            <div class="text-xl p-5">Are Your Sure To Remove This Record ?</div>
+            <div class="flex px-5">
+                <a><button type="button" class="text-sm mr-5 bg-[#1B4F72] hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">OK</button></a>
+                <a><button id="__close__btn__confirmation__" type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">Close</button></a>
+            </div>
+        </div>
+    </div>
     {{-- List Of Categories  --}}
     <div class="w-full">
         <div class="w-full h-[50px] bg-[#1A5276] flex justify-between items-center">

@@ -31,6 +31,9 @@
             $('#MODAL_CLOSE_Edit__BTN').on('click',function(){
                 $('.Edit__Modal__category__').css({'display':'none'})
             })
+            $('#__close__btn__confirmation__').on('click',function(){
+                $('.__delete__confirmation__').css({'display':'none'})
+            })
         })
         const __get__id = (data) => {
             console.log(data)
@@ -66,7 +69,17 @@
                 }
             });
         }
-
+        const __delete__btn__category__ = (data) =>{
+            $.ajax({
+                type:'GET',
+                url: "{{ env('HOST_NAME') }}" + "wallpaper/ajax/" + data
+                , success: function(result) {
+                    console.log(result.id)
+                    $('.image__focus').css({'display':'flex'})
+                    $('#__image__render__section__').html(`<img style="width:800px;" src="{{ env('HOST_NAME') }}uploads/${result.id}"/>`)
+                }
+            });
+        }
     </script>
 </body>
 </html>
