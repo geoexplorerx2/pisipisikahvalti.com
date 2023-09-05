@@ -368,6 +368,49 @@ class __Home_Controller extends Controller
     public function __Category_edit__($id)
     {
         $__Categories_data__edit__ = CategoriesModel::find($id);
-        return back()->with('__Categories_data__edit__',$__Categories_data__edit__);
+        return back()->with('__Categories_data__edit__', $__Categories_data__edit__);
+    }
+    public function __upload__edit__(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'lang' => 'required',
+            'title' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return back()->with([
+                'message' => 'some data missed',
+                'style' => 'width:90%;height:80%;font-size:20px;border-radius:10px;color:#fff;background: #C0392B;display:flex;justify-content: center;align-items: center;'
+            ]);
+        }
+        if ($request->file('file') != null) {
+            $file = $request->file('file');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+
+            if ($file->move(public_path('uploads'), $fileName)) {
+                $__upload__status__ = true;
+            } else {
+                $__upload__status__ = true;
+            }
+        }
+
+        if ($__upload__status__) {
+            CategoriesModel::find($request->id);
+            if (CategoriesModel::create([
+                'lang' => $request->lang,
+                'title' => $request->title,
+                'image' => $fileName
+            ])) {
+                return back()->with([
+                    'message' => 'Category added Successfully',
+                    'style' => 'width:90%;height:80%;font-size:20px;border-radius:10px;color:#fff;background: #0E6655;display:flex;justify-content: center;align-items: center;'
+                ]);
+            } else {
+                return back()->with([
+                    'message' => 'adding Category Failed',
+                    'style' => 'width:90%;height:80%;font-size:20px;border-radius:10px;color:#fff;background: #C0392B;display:flex;justify-content: center;align-items: center;'
+                ]);
+            }
+        }
     }
 }

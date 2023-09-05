@@ -36,6 +36,7 @@ Route::post('/lists/update', [__Home_Controller::class, '__update_list'])->middl
 Route::post('/music/upload', [__Home_Controller::class, '__upload_music'])->middleware('__user_authentication')->name('__upload_music');
 Route::post('/product/upload', [__Home_Controller::class, '__upload_product'])->middleware('__user_authentication')->name('__upload_product');
 Route::post('/wallpaper/upload', [__Home_Controller::class, '__upload_wallpaper'])->middleware('__user_authentication')->name('__upload_wallpaper');
+Route::post('/upload/edit', [__Home_Controller::class, '__upload__edit__'])->middleware('__user_authentication')->name('__upload__edit__');
 
 /** MENU__VIEWS */
 Route::get('/',[__Home_Controller::class, '__menu']);

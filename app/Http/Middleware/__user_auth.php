@@ -18,7 +18,7 @@ class __user_auth
     public function handle(Request $request, Closure $next)
     {
         if (session('auth') == null) {
-            redirect('/');
+            return redirect('/portal');
         }
         return $next($request);
     }

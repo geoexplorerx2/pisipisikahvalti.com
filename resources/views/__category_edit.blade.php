@@ -1,8 +1,9 @@
 
 <div class="Edit__Modal__category__ absolute top-0 w-full min-h-screen z-40 bg-black opacity-[.5] justify-center items-center"></div>
 <div class="Edit__Modal__category__ flex absolute top-0 w-full min-h-screen z-50 justify-center items-center">
-    <form class="w-[30%] p-3 bg-slate-100 rounded-md" method="post" action="{{ route('__upload__') }}" enctype="multipart/form-data">
+    <form class="w-[30%] p-3 bg-slate-100 rounded-md" method="post" action="{{ route('__upload__edit__') }}" enctype="multipart/form-data">
         @csrf
+        <div><input name="{{ json_decode(json_encode(session('__Categories_data__edit__')), true)['id'] }}" hidden/></div>
         <div id="MODAL_CLOSE_Edit__BTN" class="w-full flex justify-end my-1">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30px" width="30px" version="1.1" id="Capa_1" viewBox="0 0 26 26" xml:space="preserve">
                 <g>
