@@ -97,7 +97,7 @@
                                             Edit
                                         </button>
                                     </a>
-                                    <a class="w-[50%] flex justify-center"><button onclick="__delete__list__function__({{ $item->id }})" type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button></a>
+                                    <a class="w-[50%] flex justify-center"><button onClick="__delete__list__function__({{ $item->id }})" type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button></a>
                                 </td>
                             </tr>
                             @php
