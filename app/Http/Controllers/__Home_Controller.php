@@ -365,6 +365,10 @@ class __Home_Controller extends Controller
     {
         return response()->json(['id' => $__Record = ListsModel::find($id)->image]);
     }
+    public function __api__category_Edit($id)
+    {
+        return response()->json(['id' => $__Record = CategoriesModel::find($id)->image]);
+    }
     public function __Category_edit__($id)
     {
         $__Categories_data__edit__ = CategoriesModel::find($id);

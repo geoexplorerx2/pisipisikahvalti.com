@@ -43,3 +43,4 @@ Route::get('/',[__Home_Controller::class, '__menu']);
 
 /** API */
 Route::get('/list/ajax/{id}', [__Home_Controller::class, '__api__List_Edit'])->middleware('__user_authentication')->name('__api__List_Edit');
+Route::get('/category/ajax/{id}', [__Home_Controller::class, '__api__category_Edit'])->middleware('__user_authentication')->name('__api__category_Edit');
