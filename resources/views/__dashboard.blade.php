@@ -14,16 +14,16 @@
                 </svg>
             </div>
             <div class="w-full">
-                <label for="language" class="block mb-2 text-sm font-medium text-[#000]">Select an option</label>
+                <label for="language" class="block mb-2 text-sm font-medium text-[#000]">Bir dil seçin</label>
                 <select name="lang" id="language" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                    <option selected>Choose a Language</option>
+                    <option selected>Bir Dil Seçin</option>
                     <option value="TR">TR</option>
                     <option value="EN">EN</option>
                     <option value="AR">AR</option>
                 </select>
             </div>
             <div class="w-full mt-3">
-                <label for="default-input" class="block mb-2 text-sm font-medium text-[#000]">Title</label>
+                <label for="default-input" class="block mb-2 text-sm font-medium text-[#000]">Başlık</label>
                 <input name="title" type="text" id="default-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
             </div>
             <div class="w-full mt-3">
@@ -33,7 +33,7 @@
                             <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
                             </svg>
-                            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+                            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Yüklemek için tıklayın</span> or drag and drop</p>
                             <p class="text-xs text-gray-500 dark:text-gray-400">PNG, JPG or JPEG</p>
                         </div>
                         <input name="file" id="dropzone-file" type="file" class="hidden" />
