@@ -372,6 +372,7 @@ class __Home_Controller extends Controller
     }
     public function __upload__edit__(Request $request)
     {
+        $__upload__status__ = true;
         $validator = Validator::make($request->all(), [
             'lang' => 'required',
             'title' => 'required',
@@ -390,24 +391,25 @@ class __Home_Controller extends Controller
             if ($file->move(public_path('uploads'), $fileName)) {
                 $__upload__status__ = true;
             } else {
-                $__upload__status__ = true;
+                $__upload__status__ = false;
             }
         }
 
         if ($__upload__status__) {
-            CategoriesModel::find($request->id);
-            if (CategoriesModel::create([
-                'lang' => $request->lang,
-                'title' => $request->title,
-                'image' => $fileName
-            ])) {
+            $__category__update__=CategoriesModel::find($request->_id_);
+            $__category__update__->lang = $request->lang;
+            $__category__update__->title = $request->title;
+            if($request->file('file') != null){
+                $__category__update__->image = $fileName;
+            }
+            if ($__category__update__->save()) {
                 return back()->with([
-                    'message' => 'Category added Successfully',
+                    'message' => 'Category editing Successfully',
                     'style' => 'width:90%;height:80%;font-size:20px;border-radius:10px;color:#fff;background: #0E6655;display:flex;justify-content: center;align-items: center;'
                 ]);
             } else {
                 return back()->with([
-                    'message' => 'adding Category Failed',
+                    'message' => 'editing Category Failed',
                     'style' => 'width:90%;height:80%;font-size:20px;border-radius:10px;color:#fff;background: #C0392B;display:flex;justify-content: center;align-items: center;'
                 ]);
             }
