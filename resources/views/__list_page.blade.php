@@ -26,6 +26,9 @@
             </div>
         </div>
     </div>
+    <div class="__delete__confirmation__ absolute top-0 w-full min-h-screen z-40 hidden justify-center items-center bg-[rgba(0,0,0,0.7)]">
+
+    </div>
     {{-- List Of Categories  --}}
     <div class="w-full">
         <div class="w-full h-[50px] bg-[#1A5276] flex justify-between items-center">
@@ -94,7 +97,7 @@
                                             Edit
                                         </button>
                                     </a>
-                                    <a class="w-[50%] flex justify-center" href="{{ route('__List_destroy', ['id' => $item->id]) }}"><button type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button></a>
+                                    <a class="w-[50%] flex justify-center"><button onclick="__delete__list__function__({{ $item->id }})" type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button></a>
                                 </td>
                             </tr>
                             @php
