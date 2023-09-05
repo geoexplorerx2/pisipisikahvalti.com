@@ -62,7 +62,7 @@
                 , success: function(result) {
                     console.log(result.id)
                     $('.image__focus').css({'display':'flex'})
-                    $('#__image__render__section__').html(`<img src="{{ env('HOST_NAME') }}uploads/${result.id}"/>`)
+                    $('#__image__render__section__').html(`<img style="width:800px;" src="{{ env('HOST_NAME') }}uploads/${result.id}"/>`)
                 }
             });
         }

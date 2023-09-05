@@ -371,7 +371,7 @@ class __Home_Controller extends Controller
     }
     public function __api__wallpaper_Edit($id)
     {
-        return response()->json(['id' => $__Record = __Wallpaper_Model::find($id)->image]);
+        return response()->json(['id' => $__Record = __Wallpaper_Model::find($id)->wallpaper]);
     }
     public function __Category_edit__($id)
     {
