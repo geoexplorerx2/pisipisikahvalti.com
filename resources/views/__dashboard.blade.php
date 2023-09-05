@@ -65,14 +65,8 @@
             </div>
         </div>
     </div>
-    <div class="__delete__confirmation__ absolute top-0 w-full min-h-screen z-50 flex justify-center items-center bg-[rgba(0,0,0,0.7)]">
-        <div class="w-[30%] h-[150px] bg-white rounded-md">
-            <div class="text-xl p-5">Are Your Sure To Remove This Record ?</div>
-            <div class="flex px-5">
-                <a><button type="button" class="text-sm mr-5 bg-[#1B4F72] hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">OK</button></a>
-                <a><button id="__close__btn__confirmation__" type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">Close</button></a>
-            </div>
-        </div>
+    <div class="__delete__confirmation__ absolute top-0 w-full min-h-screen z-40 hidden justify-center items-center bg-[rgba(0,0,0,0.7)]">
+
     </div>
     {{-- List Of Categories  --}}
     <div class="w-full">
@@ -118,7 +112,7 @@
                                 <td class="p-3 px-5"><img class="cursor-pointer" onClick="__get__id__category__({{ $item->id }})" style="width: 5%;height:5%;border-radius:10px;" src="{{ session('auth')['HTTP_HOST'].'public/uploads/'.$item->image }}" /></td>
                                 <td class="">
                                     <a href="{{ route('__Category_edit__',['id'=>$item->id]) }}"><button type="button" class="text-sm bg-[#0080ff] text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Edit</button></a>
-                                    <a href="{{ route('__Category_destroy',['id'=>$item->id]) }}"><button type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button></a>
+                                    <button onclick="__delete__category__function__({{ $item->id }})" type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button>
                                 </td>
                             </tr>
                             @php
