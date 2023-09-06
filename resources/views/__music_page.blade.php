@@ -22,7 +22,7 @@
                 <input id="file" name="file" type="file" class="hidden" />
             </div>
             <button type="submit" class="w-full h-16 mt-2 rounded-md bg-slate-900 flex justify-center items-center text-white">
-                . . . Submit . . .
+                . . . gönder . . .
             </button>
         </form>
     </div>
@@ -31,7 +31,7 @@
     </div>
     <div class="w-full">
         <div class="w-full h-[50px] bg-[#1A5276] flex justify-between items-center">
-            <div class="w-[20%] text-white text-base px-10">Add Music</div>
+            <div class="w-[20%] text-white text-base px-10">Müzik Ekle</div>
             <div class="w-[80%] h-full flex items-center justify-center">
                 <div id="aletSection" style="{{ session('style') }}">
                     {{ session('message') }}
@@ -45,7 +45,7 @@
             <div class="text-gray-900 bg-gray-200 flex-1 rounded-md">
                 <div class="w-full h-[100px] flex justify-end">
                     <button id="MODAL_OPEN_BTN" class="bg-[#075A8F] text-white h-[50%] px-5 m-5 rounded-md">
-                        Add Music
+                        Müzik Ekle
                     </button>
                 </div>
                 <div class="px-3 py-4 flex justify-center overflow-y-scroll max-h-[71vh]">
@@ -77,8 +77,8 @@
                                     </a>
                                 </td>
                                 <td class="">
-                                    <a href="{{ route('__Music_Status', ['id' => $item->id]) }}"><button type="button" class="text-sm bg-[#1F618D]  text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">{{ $item->status==true ? 'Selected':'Select' }}</button></a>
-                                    <button onClick="__delete__music__function__({{ $item->id }})" type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button>
+                                    <a href="{{ route('__Music_Status', ['id' => $item->id]) }}"><button type="button" class="text-sm bg-[#1F618D]  text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">{{ $item->status==true ? 'Seçildi':'Seç' }}</button></a>
+                                    <button onClick="__delete__music__function__({{ $item->id }})" type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Sil</button>
                                 </td>
                             </tr>
                             @php
