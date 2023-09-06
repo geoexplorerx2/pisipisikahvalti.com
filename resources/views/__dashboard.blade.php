@@ -33,8 +33,8 @@
                             <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
                             </svg>
-                            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Yüklemek için tıklayın</span> or drag and drop</p>
-                            <p class="text-xs text-gray-500 dark:text-gray-400">PNG, JPG or JPEG</p>
+                            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Yüklemek için tıklayın</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">PNG, JPG veya JPEG</p>
                         </div>
                         <input name="file" id="dropzone-file" type="file" class="hidden" />
                     </label>
@@ -42,7 +42,7 @@
             </div>
             <div class="w-full my-3">
                 <button type="submit" class="text-white bg-[#3b5998] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-5 py-5 text-center flex justify-center items-center dark:focus:ring-[#3b5998]/55 w-full">
-                    . . . ADD CATEGORY . . .
+                    . . . KATEGORİ EKLE . . .
                 </button>
             </div>
         </form>
@@ -71,7 +71,7 @@
     {{-- List Of Categories  --}}
     <div class="w-full">
         <div class="w-full h-[50px] bg-[#1A5276] flex justify-between items-center">
-            <div class="w-[20%] text-white text-base px-10">Add Category</div>
+            <div class="w-[20%] text-white text-base px-10">KATEGORİ EKLE</div>
             <div class="w-[80%] h-full flex items-center justify-center">
                 <div id="aletSection" style="{{ session('style') }}">
                     {{ session('message') }}
@@ -85,7 +85,7 @@
             <div class="text-gray-900 bg-gray-200 flex-1 rounded-md">
                 <div class="w-full h-[100px] flex justify-end">
                     <button id="MODAL_OPEN_BTN" class="bg-[#075A8F] text-white h-[50%] px-5 m-5 rounded-md">
-                        Add Category
+                        KATEGORİ EKLE
                     </button>
                 </div>
                 <div class="px-3 py-4 flex justify-center overflow-y-scroll max-h-[71vh]">
@@ -111,8 +111,8 @@
                                 <td class="p-3 px-5">{{ $item->title }}</td>
                                 <td class="p-3 px-5"><img class="cursor-pointer" onClick="__get__id__category__({{ $item->id }})" style="width: 5%;height:5%;border-radius:10px;" src="{{ session('auth')['HTTP_HOST'].'public/uploads/'.$item->image }}" /></td>
                                 <td class="">
-                                    <a href="{{ route('__Category_edit__',['id'=>$item->id]) }}"><button type="button" class="text-sm bg-[#0080ff] text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Edit</button></a>
-                                    <button onclick="__delete__category__function__({{ $item->id }})" type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button>
+                                    <a href="{{ route('__Category_edit__',['id'=>$item->id]) }}"><button type="button" class="text-sm bg-[#0080ff] text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Düzenle</button></a>
+                                    <button onclick="__delete__category__function__({{ $item->id }})" type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Sil</button>
                                 </td>
                             </tr>
                             @php

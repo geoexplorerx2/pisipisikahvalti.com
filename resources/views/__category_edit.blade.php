@@ -1,9 +1,8 @@
-
 <div class="Edit__Modal__category__ absolute top-0 w-full min-h-screen z-40 bg-black opacity-[.5] justify-center items-center"></div>
 <div class="Edit__Modal__category__ flex absolute top-0 w-full min-h-screen z-50 justify-center items-center">
     <form class="w-[30%] p-3 bg-slate-100 rounded-md" method="post" action="{{ route('__upload__edit__') }}" enctype="multipart/form-data">
         @csrf
-        <div><input name="_id_" value="{{ json_decode(json_encode(session('__Categories_data__edit__')), true)['id'] }}" hidden/></div>
+        <div><input name="_id_" value="{{ json_decode(json_encode(session('__Categories_data__edit__')), true)['id'] }}" hidden /></div>
         <div id="MODAL_CLOSE_Edit__BTN" class="w-full flex justify-end my-1">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30px" width="30px" version="1.1" id="Capa_1" viewBox="0 0 26 26" xml:space="preserve">
                 <g>
@@ -12,16 +11,16 @@
             </svg>
         </div>
         <div class="w-full">
-            <label for="language" class="block mb-2 text-sm font-medium text-[#000]">Select an option</label>
+            <label for="language" class="block mb-2 text-sm font-medium text-[#000]">Bir Dil Seçin</label>
             <select name="lang" id="language" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                <option selected>Choose a Language</option>
-                <option @if(json_decode(json_encode(session('__Categories_data__edit__')), true)['lang']=='TR') {{ 'selected' }} @endif value="TR">TR</option>
-                <option @if(json_decode(json_encode(session('__Categories_data__edit__')), true)['lang']=='EN') {{ 'selected' }} @endif value="EN">EN</option>
-                <option @if(json_decode(json_encode(session('__Categories_data__edit__')), true)['lang']=='AR') {{ 'selected' }} @endif value="AR">AR</option>
+                <option selected>Bir Dil Seçin</option>
+                <option @if(json_decode(json_encode(session('__Categories_data__edit__')), true)['lang']=='TR' ) {{ 'selected' }} @endif value="TR">TR</option>
+                <option @if(json_decode(json_encode(session('__Categories_data__edit__')), true)['lang']=='EN' ) {{ 'selected' }} @endif value="EN">EN</option>
+                <option @if(json_decode(json_encode(session('__Categories_data__edit__')), true)['lang']=='AR' ) {{ 'selected' }} @endif value="AR">AR</option>
             </select>
         </div>
         <div class="w-full mt-3">
-            <label for="default-input" class="block mb-2 text-sm font-medium text-[#000]">Title</label>
+            <label for="default-input" class="block mb-2 text-sm font-medium text-[#000]">Başlık</label>
             <input name="title" type="text" id="default-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{ json_decode(json_encode(session('__Categories_data__edit__')), true)['title'] }}">
         </div>
         <div class="w-full mt-3">
@@ -31,8 +30,8 @@
                         <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
                         </svg>
-                        <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
-                        <p class="text-xs text-gray-500 dark:text-gray-400">PNG, JPG or JPEG</p>
+                        <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Yüklemek için tıklayın</span></p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">PNG, JPG veya JPEG</p>
                     </div>
                     <input name="file" id="dropzone-file" type="file" class="hidden" />
                 </label>
@@ -40,7 +39,7 @@
         </div>
         <div class="w-full my-3">
             <button type="submit" class="text-white bg-[#3b5998] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-5 py-5 text-center flex justify-center items-center dark:focus:ring-[#3b5998]/55 w-full">
-                . . . Update CATEGORY . . .
+                . . . Kategoriyi güncelle . . .
             </button>
         </div>
     </form>
