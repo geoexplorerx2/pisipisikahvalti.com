@@ -93,10 +93,10 @@
             $('.__delete__confirmation__').html(
                 `
                 <div class="w-[30%] h-[120px] bg-white rounded-md">
-                    <div class="text-xl p-5">Are Your Sure To Remove This Record ?</div>
+                    <div class="text-xl p-5">Bu Kaydı Kaldıracağınızdan Emin misiniz ?</div>
                     <div class="flex justify-between px-5">
-                        <button id="__close__btn__confirmation__" type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">Close</button>
-                        <a href="${"{{ env('HOST_NAME') }}"}categories/destroy/${data}"><button type="button" class="text-sm mr-5 bg-[#1B4F72] hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">OK</button></a>
+                        <button id="__close__btn__confirmation__" type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">iptal</button>
+                        <a href="${"{{ env('HOST_NAME') }}"}categories/destroy/${data}"><button type="button" class="text-sm mr-5 bg-[#1B4F72] hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">Evet</button></a>
                     </div>
                 </div>
                 `
@@ -115,10 +115,10 @@
             $('.__delete__confirmation__').html(
                 `
                 <div class="w-[30%] h-[120px] bg-white rounded-md">
-                    <div class="text-xl p-5">Are Your Sure To Remove This Record ?</div>
+                    <div class="text-xl p-5">Bu Kaydı Kaldıracağınızdan Emin misiniz ?</div>
                     <div class="flex justify-between px-5">
-                        <button id="__close__btn__confirmation__" type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">Close</button>
-                        <a href="${"{{ env('HOST_NAME') }}"}lists/destroy/${data}"><button type="button" class="text-sm mr-5 bg-[#1B4F72] hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">OK</button></a>
+                        <button id="__close__btn__confirmation__" type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">iptal</button>
+                        <a href="${"{{ env('HOST_NAME') }}"}lists/destroy/${data}"><button type="button" class="text-sm mr-5 bg-[#1B4F72] hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">Evet</button></a>
                     </div>
                 </div>
                 `
@@ -136,10 +136,10 @@
             $('.__delete__confirmation__').html(
                 `
                 <div class="w-[30%] h-[120px] bg-white rounded-md">
-                    <div class="text-xl p-5">Are Your Sure To Remove This Record ?</div>
+                    <div class="text-xl p-5">Bu Kaydı Kaldıracağınızdan Emin misiniz ?</div>
                     <div class="flex justify-between px-5">
-                        <button id="__close__btn__confirmation__" type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">Close</button>
-                        <a href="${"{{ env('HOST_NAME') }}"}wallpaper/destroy/${data}"><button type="button" class="text-sm mr-5 bg-[#1B4F72] hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">OK</button></a>
+                        <button id="__close__btn__confirmation__" type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">iptal</button>
+                        <a href="${"{{ env('HOST_NAME') }}"}wallpaper/destroy/${data}"><button type="button" class="text-sm mr-5 bg-[#1B4F72] hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">Evet</button></a>
                     </div>
                 </div>
                 `
@@ -157,10 +157,10 @@
             $('.__delete__confirmation__').html(
                 `
                 <div class="w-[30%] h-[120px] bg-white rounded-md">
-                    <div class="text-xl p-5">Are Your Sure To Remove This Record ?</div>
+                    <div class="text-xl p-5">Bu Kaydı Kaldıracağınızdan Emin misiniz ?</div>
                     <div class="flex justify-between px-5">
-                        <button id="__close__btn__confirmation__" type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">Close</button>
-                        <a href="${"{{ env('HOST_NAME') }}"}music/destroy/${data}"><button type="button" class="text-sm mr-5 bg-[#1B4F72] hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">OK</button></a>
+                        <button id="__close__btn__confirmation__" type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">iptal</button>
+                        <a href="${"{{ env('HOST_NAME') }}"}music/destroy/${data}"><button type="button" class="text-sm mr-5 bg-[#1B4F72] hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">Evet</button></a>
                     </div>
                 </div>
                 `
