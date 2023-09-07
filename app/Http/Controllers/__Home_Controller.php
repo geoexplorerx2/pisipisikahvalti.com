@@ -359,7 +359,8 @@ class __Home_Controller extends Controller
         $__lists = ListsModel::all();
         $__Music = __Music_Model::where('status', 1)->get();
         $__Wallpaper = __Wallpaper_Model::where('status', 1)->get();
-        return view('__menu_page', compact('__categories', '__lists', '__Music', '__Wallpaper'));
+        $__Link = env('HOST_NAME');
+        return view('__menu_page', compact('__categories', '__lists', '__Music', '__Wallpaper','__Link'));
     }
     public function __api__List_Edit($id)
     {

@@ -6,15 +6,10 @@
     <link rel="stylesheet" href="{{ asset('style.css') }}" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body class="Kanit">
-    <div class="relative w-full min-h-screen max-w-[540px]">
-        <div class="relative z-0 w-full">
-            <div class="w-full px-5 py-3">
-                
-            </div>
-        </div>
-        <div class="relative z-0 w-full">
-
+<body style="background-image:url({{ $__Link.$__Wallpaper[0]->wallpaper }});background-size:cover;" class="Kanit">
+    <div class="relative w-full min-h-screen max-w-[360px] bg-white">
+        <div class="w-full min-h-screen bg-white">
+            
         </div>
     </div>
     <script src="{{ asset('jquery.js') }}"></script>
