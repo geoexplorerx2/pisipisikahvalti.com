@@ -58,11 +58,13 @@
             const audio = document.querySelector("audio");
             audio.play();
         });
-        function __categorization__data__function__(data){
+
+        function __categorization__data__function__(data) {
             let __Lang__ = $('#languages').val();
-            let __URL__ = window.location.pathname;
-            window.location.replace(`${__URL__}?id=${data.id}&lang=${__Lang__}`);
+            let __URL__ = '/panel/menu/' + data.id + '/' + __Lang__;
+            window.location.replace(__URL__)
         }
+
     </script>
 </body>
 </html>

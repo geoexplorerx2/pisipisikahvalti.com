@@ -353,24 +353,16 @@ class __Home_Controller extends Controller
         }
         return back();
     }
-    public function __menu(Request $request)
+    public function __menu()
     {
-        $id = null;
-        $lang = "TR";
-        if ($request->id == null) {
-            $id = 1;
-        }
-        if ($request->lang != null) {
-            $lang = $request->lang;
-        }
-        
-        $__selected__category__ = CategoriesModel::where('id', $id)->where('lang', $lang)->get();
-        $__selected__list__ = ListsModel::where('category_id', $id)->get();
+        $__selected__category__ = CategoriesModel::first();
+        $__selected__list__ = ListsModel::where('lang', "TR")->where('title','KAHVALTI')->get();
         $__categories = CategoriesModel::all();
         $__lists = ListsModel::all();
         $__Music = __Music_Model::where('status', 1)->get();
         $__Wallpaper = __Wallpaper_Model::where('status', 1)->get();
         $__Link = env('HOST_NAME');
+        $lang = 'TR';
         return view('__menu_page', compact(
             '__categories',
             '__lists',
@@ -379,7 +371,27 @@ class __Home_Controller extends Controller
             '__Link',
             '__selected__category__',
             '__selected__list__',
-            'lang'
+            'lang',
+        ));
+    }
+    public function __menu__with__id__($id,$lang){
+        $__selected__category__ = CategoriesModel::find($id);
+        $__selected__list__ = ListsModel::where('lang', $lang)->where('category_id',$__selected__category__->id)->get();
+        $__categories = CategoriesModel::all();
+        $__lists = ListsModel::all();
+        $__Music = __Music_Model::where('status', 1)->get();
+        $__Wallpaper = __Wallpaper_Model::where('status', 1)->get();
+        $__Link = env('HOST_NAME');
+        $lang = $lang;
+        return view('__menu_page', compact(
+            '__categories',
+            '__lists',
+            '__Music',
+            '__Wallpaper',
+            '__Link',
+            '__selected__category__',
+            '__selected__list__',
+            'lang',
         ));
     }
     public function __api__List_Edit($id)

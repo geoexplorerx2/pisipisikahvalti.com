@@ -40,6 +40,7 @@ Route::post('/upload/edit', [__Home_Controller::class, '__upload__edit__'])->mid
 
 /** MENU__VIEWS */
 Route::get('/',[__Home_Controller::class, '__menu'])->name('menu');
+Route::get('/menu/{id}/{lang}',[__Home_Controller::class, '__menu__with__id__'])->name('menu__with__id');
 
 /** API */
 Route::get('/list/ajax/{id}', [__Home_Controller::class, '__api__List_Edit'])->middleware('__user_authentication')->name('__api__List_Edit');
