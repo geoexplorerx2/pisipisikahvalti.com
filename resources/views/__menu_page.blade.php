@@ -42,9 +42,11 @@
                     <ul class="w-[100%] py-1 flex items-center px-1 overflow-x-scroll">
                         @foreach($__categories as $__category)
                         <li onClick="__categorization__data__function__({{ $__category }})">
+                            @if ($__category->lang==$lang)
                             <button class="w-[65px] h-[55px] px-1">
-                                <img class="w-full h-full rounded-xl mr-4 border-2 border-[red]" src="{{ $__Link.$__category->image }}" />
+                                <img class="w-full h-full rounded-xl mr-4 {{ $__selected__category__->id==$__category->id? 'border-2 border-[red]':null }} " src="{{ $__Link.$__category->image }}" />
                             </button>
+                            @endif
                         </li>
                         @endforeach
                     </ul>
