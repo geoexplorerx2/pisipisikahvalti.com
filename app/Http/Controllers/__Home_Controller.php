@@ -353,14 +353,34 @@ class __Home_Controller extends Controller
         }
         return back();
     }
-    public function __menu()
+    public function __menu(Request $request)
     {
+        $id = null;
+        $lang = "TR";
+        if ($request->id == null) {
+            $id = 1;
+        }
+        if ($request->lang != null) {
+            $lang = $request->lang;
+        }
+        
+        $__selected__category__ = CategoriesModel::where('id', $id)->where('lang', $lang)->get();
+        $__selected__list__ = ListsModel::where('category_id', $id)->get();
         $__categories = CategoriesModel::all();
         $__lists = ListsModel::all();
         $__Music = __Music_Model::where('status', 1)->get();
         $__Wallpaper = __Wallpaper_Model::where('status', 1)->get();
         $__Link = env('HOST_NAME');
-        return view('__menu_page', compact('__categories', '__lists', '__Music', '__Wallpaper','__Link'));
+        return view('__menu_page', compact(
+            '__categories',
+            '__lists',
+            '__Music',
+            '__Wallpaper',
+            '__Link',
+            '__selected__category__',
+            '__selected__list__',
+            'lang'
+        ));
     }
     public function __api__List_Edit($id)
     {
@@ -405,10 +425,10 @@ class __Home_Controller extends Controller
         }
 
         if ($__upload__status__) {
-            $__category__update__=CategoriesModel::find($request->_id_);
+            $__category__update__ = CategoriesModel::find($request->_id_);
             $__category__update__->lang = $request->lang;
             $__category__update__->title = $request->title;
-            if($request->file('file') != null){
+            if ($request->file('file') != null) {
                 $__category__update__->image = $fileName;
             }
             if ($__category__update__->save()) {
