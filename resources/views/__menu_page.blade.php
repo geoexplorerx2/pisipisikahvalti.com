@@ -39,16 +39,8 @@
                     </div>
                 </div>
                 <div class="w-full mt-5">
-                    <ul class="w-[100%] py-1 flex items-center px-1 overflow-x-scroll">
-                        @foreach($__categories as $__category)
-                        <li onClick="__categorization__data__function__({{ $__category }})">
-                            @if ($__category->lang==$lang)
-                            <button class="w-[65px] h-[55px] px-1">
-                                <img class="w-full h-full rounded-xl mr-4 {{ $__selected__category__->id==$__category->id? 'border-2 border-[red]':null }} " src="{{ $__Link.$__category->image }}" />
-                            </button>
-                            @endif
-                        </li>
-                        @endforeach
+                    <ul id="__List__Of__Categories__" class="w-[100%] py-1 flex items-center px-1 overflow-x-scroll">
+
                     </ul>
                 </div>
             </div>
@@ -61,11 +53,62 @@
             audio.play();
         });
 
-        function __categorization__data__function__(data) {
-            let __Lang__ = $('#languages').val();
-            let __URL__ = '/panel/menu/' + data.id + '/' + __Lang__;
-            window.location.replace(__URL__)
-        }
+    </script>
+    <script>
+        $(document).ready(function() {
+            var queryString = window.location.search;
+
+            // Check if there are any query parameters
+            if (queryString) {
+                // Remove the leading "?" character
+                queryString = queryString.substring(1);
+
+                // Split the query string into an array of key-value pairs
+                var queryParams = queryString.split('&');
+
+                // Create an object to store the key-value pairs
+                var params = {};
+
+                // Iterate through the key-value pairs and populate the params object
+                queryParams.forEach(function(param) {
+                    var keyValue = param.split('=');
+                    var key = decodeURIComponent(keyValue[0]);
+                    var value = decodeURIComponent(keyValue[1]);
+                    params[key] = value;
+                });
+            }
+
+            $.ajax({
+                url: (params == undefined) ? `/panel/get/categories/` : `/panel/get/category/${params.title}/${params.lang}/${params.id}`
+                , type: "GET"
+                , success: function(result) {
+                    let __Temp__ = '';
+
+                    const __categorization__data__function__ = (data) => {
+                        window.location.replace(`/panel?title=${data.title}&lang=${data.lang}&id=${data.id}`)
+                        // Add your logic here to handle the click event
+                    };
+
+                    result.__categories.map((item) => {
+                        __Temp__ += `
+                            <li style="width:100%;height:100%;">
+                                <button style="width:75px;height:65px;padding:0px 5px;">
+                                    <img style="width:100%;height:100%;border:${result.__selected__category__.id == item.id ? '3px solid red;' : '1px solid transparent;'} border-radius:12px;margin-right:16px;" src="{{ $__Link }}${item.image}"
+                                </button>
+                            </li>
+                        `;
+                    });
+
+                    $('#__List__Of__Categories__').html(__Temp__);
+
+                    // Add a click event handler for the <li> elements
+                    $('#__List__Of__Categories__ li').click(function() {
+                        // Call the function with the item data
+                        __categorization__data__function__(result.__categories[$(this).index()]);
+                    });
+                }
+            });
+        });
 
     </script>
 </body>

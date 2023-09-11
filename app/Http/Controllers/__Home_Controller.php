@@ -356,33 +356,13 @@ class __Home_Controller extends Controller
     public function __menu()
     {
         $__selected__category__ = CategoriesModel::first();
-        $__selected__list__ = ListsModel::where('lang', "TR")->where('title','KAHVALTI')->get();
+        $__selected__list__ = ListsModel::where('lang', "TR")->where('title', 'KAHVALTI')->get();
         $__categories = CategoriesModel::all();
         $__lists = ListsModel::all();
         $__Music = __Music_Model::where('status', 1)->get();
         $__Wallpaper = __Wallpaper_Model::where('status', 1)->get();
         $__Link = env('HOST_NAME');
         $lang = 'TR';
-        return view('__menu_page', compact(
-            '__categories',
-            '__lists',
-            '__Music',
-            '__Wallpaper',
-            '__Link',
-            '__selected__category__',
-            '__selected__list__',
-            'lang',
-        ));
-    }
-    public function __menu__with__id__($id,$lang){
-        $__selected__category__ = CategoriesModel::find($id);
-        $__selected__list__ = ListsModel::where('lang', $lang)->where('category_id',$__selected__category__->id)->get();
-        $__categories = CategoriesModel::all();
-        $__lists = ListsModel::all();
-        $__Music = __Music_Model::where('status', 1)->get();
-        $__Wallpaper = __Wallpaper_Model::where('status', 1)->get();
-        $__Link = env('HOST_NAME');
-        $lang = $lang;
         return view('__menu_page', compact(
             '__categories',
             '__lists',
@@ -455,5 +435,46 @@ class __Home_Controller extends Controller
                 ]);
             }
         }
+    }
+    public function __get__categories__()
+    {
+        $__selected__category__ = CategoriesModel::first();
+        $__selected__list__ = ListsModel::where('lang', "TR")->where('title', 'KAHVALTI')->get();
+        $__categories = CategoriesModel::where('lang','TR')->get();
+        $__lists = ListsModel::all();
+        $__Music = __Music_Model::where('status', 1)->get();
+        $__Wallpaper = __Wallpaper_Model::where('status', 1)->get();
+        $__Link = env('HOST_NAME');
+        $lang = 'TR';
+        return response()->json([
+            '__categories' => $__categories,
+            '__lists' => $__lists,
+            '__Music' => $__Music,
+            '__Wallpaper' => $__Wallpaper,
+            '__Link' => $__Link,
+            '__selected__category__' => $__selected__category__,
+            '__selected__list__' => $__selected__list__,
+            'lang' => $lang,
+        ]);
+    }
+    public function __get__category__($title,$lang,$id){
+        $__selected__category__ = (CategoriesModel::where('title',$title)->where('lang',$lang)->get())[0];
+        $__selected__list__ = ListsModel::where('lang', $lang)->where('category_id', $id)->get();
+        $__categories = CategoriesModel::where('lang',$lang)->get();
+        $__lists = ListsModel::all();
+        $__Music = __Music_Model::where('status', 1)->get();
+        $__Wallpaper = __Wallpaper_Model::where('status', 1)->get();
+        $__Link = env('HOST_NAME');
+        $lang = $lang;
+        return response()->json([
+            '__categories' => $__categories,
+            '__lists' => $__lists,
+            '__Music' => $__Music,
+            '__Wallpaper' => $__Wallpaper,
+            '__Link' => $__Link,
+            '__selected__category__' => $__selected__category__,
+            '__selected__list__' => $__selected__list__,
+            'lang' => $lang,
+        ]);
     }
 }
