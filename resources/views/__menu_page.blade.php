@@ -57,6 +57,13 @@
     <script>
         $(document).ready(function() {
             const __Query__String__ = () => {
+                // Define default values for query parameters
+                var defaults = {
+                    title: false
+                    , lang: false
+                    , id: false
+                    // Add default values for other parameters as needed
+                };
                 // Get the entire query string
                 var queryString = window.location.search;
 
@@ -79,11 +86,20 @@
                         params[key] = value;
                     });
 
-                    // Now you have an object (params) containing the query parameters
-
+                    // Merge the parsed params with default values
+                    for (var key in defaults) {
+                        if (defaults.hasOwnProperty(key) && !params.hasOwnProperty(key)) {
+                            params[key] = defaults[key];
+                        }
+                    }
+                    if (params.id !== false && params.id !== '' && params.title !== false && params.title !== '' && params.lang !== false && params.lang !== '') {
+                        return `/panel/get/category/${params.title}/${params.lang}/${params.id}`
+                    } else {
+                        return '/panel/get/categories/';
+                    }
                     // Get the count of query parameters
                     var queryParameterCount = Object.keys(params).length;
-                    return `/panel/get/category/${params.title}/${params.lang}/${params.id}`
+
                     // return '/panel/get/categories/';
                 } else {
                     // Handle the case where no query parameters are present
