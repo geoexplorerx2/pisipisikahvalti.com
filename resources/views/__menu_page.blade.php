@@ -128,7 +128,7 @@
                     result.__categories.map((item) => {
                         __Temp__ += `
                             <li style="width:100%;height:100%;">
-                                <button style="width:75px;height:65px;padding:0px 5px;">
+                                <button style="width:80px;height:65px;padding:0px 5px;">
                                     <img style="width:100%;height:100%;border:${result.__selected__category__.id == item.id ? '3px solid rgba(215,4,120,0.8);' : '1px solid transparent;'} border-radius:12px;margin-right:16px;" src="{{ $__Link }}${item.image}"
                                 </button>
                             </li>
@@ -139,13 +139,13 @@
                             `
                         <div style="width:99%;display:flex;border:2px solid rgba(215,4,120,0.8);border-radius:10px;margin:10px 0px;" class="box-shodow">
                             <div style="width:30%;padding:2px">
-                                <img style="border-radius:10px;" src="{{ $__Link }}${item.image}"/>
+                                <img style="border-radius:10px;width:100%;height:100px;" src="{{ $__Link }}${item.image}"/>
                             </div>
                             <div style="width:70%;padding:5px 10px;position:relative;">
                                 <div title="${item.contentHeader}" style="color:#000;font-size:18px;font-weight:500;">${item.contentHeader.slice(0,30)}</div>
                                 <div title="${item.contentBody}" style="color:#000;">${item.contentBody.slice(0,30)}</div>
                                 <div style="width:100%;display:flex;position:absolute;bottom:6px">
-                                    <div style="font-weight:400;padding:0px 5px;">Kişi Başı</div>
+                                    <div style="font-weight:400;padding:0px 5px;margin-right:20px;">Kişi Başı</div>
                                     <div style="font-weight:400;padding:0px 5px;">${item.price}₺</div>
                                 </div>
                             </div>
