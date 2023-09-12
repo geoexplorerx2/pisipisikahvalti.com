@@ -44,7 +44,7 @@
                     </ul>
                 </div>
                 <div class="w-full mt-5 p-2">
-                    <div class="border-t-2 border-b-2 border-[rgba(215,4,120,0.3)] py-6 mb-2">
+                    <div id="__categorization__title__" class="border-t-2 border-b-2 border-[rgba(215,4,120,0.3)] py-3 mb-2 flex items-center">
 
                     </div>
                     <div id="__List__Of__Products__" class="w-full h-[45vh] overflow-y-scroll"></div>
@@ -120,6 +120,7 @@
                 , success: function(result) {
                     let __Temp__ = '';
                     let __Temp__2__ = '';
+                    let __Temp__4__ = '';
                     const __categorization__data__function__ = (data) => {
                         window.location.replace(`/panel?title=${data.title}&lang=${data.lang}&id=${data.id}`)
                         // Add your logic here to handle the click event
@@ -152,9 +153,11 @@
                         </div>
                         `
                     })
+
                     $('#__List__Of__Categories__').html(__Temp__);
                     $('#__List__Of__Products__').html(__Temp__2__);
-                    // Add a click event handler for the <li> elements 
+                    $('#__categorization__title__').html(`<span style="color:rgba(215,4,120,0.9);font-size:20px;font-weight:500;letter-spacing: 1px;">${result.__selected__category__.title}</span>`);
+                    // Add a click event handler for the <li> elements __categorization__title__
                     $('#__List__Of__Categories__ li').click(function() {
                         // Call the function with the item data
                         __categorization__data__function__(result.__categories[$(this).index()]);
