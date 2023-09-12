@@ -56,30 +56,44 @@
     </script>
     <script>
         $(document).ready(function() {
-            var queryString = window.location.search;
+            const __Query__String__ = () => {
+                // Get the entire query string
+                var queryString = window.location.search;
 
-            // Check if there are any query parameters
-            if (queryString) {
-                // Remove the leading "?" character
-                queryString = queryString.substring(1);
+                // Check if there are any query parameters
+                if (queryString) {
+                    // Remove the leading "?" character
+                    queryString = queryString.substring(1);
 
-                // Split the query string into an array of key-value pairs
-                var queryParams = queryString.split('&');
+                    // Split the query string into an array of key-value pairs
+                    var queryParams = queryString.split('&');
 
-                // Create an object to store the key-value pairs
-                var params = {};
+                    // Create an object to store the key-value pairs
+                    var params = {};
 
-                // Iterate through the key-value pairs and populate the params object
-                queryParams.forEach(function(param) {
-                    var keyValue = param.split('=');
-                    var key = decodeURIComponent(keyValue[0]);
-                    var value = decodeURIComponent(keyValue[1]);
-                    params[key] = value;
-                });
-            }
+                    // Iterate through the key-value pairs and populate the params object
+                    queryParams.forEach(function(param) {
+                        var keyValue = param.split('=');
+                        var key = decodeURIComponent(keyValue[0]);
+                        var value = decodeURIComponent(keyValue[1]);
+                        params[key] = value;
+                    });
+
+                    // Now you have an object (params) containing the query parameters
+
+                    // Get the count of query parameters
+                    var queryParameterCount = Object.keys(params).length;
+                    return `/panel/get/category/${params.title}/${params.lang}/${params.id}`
+                    // return '/panel/get/categories/';
+                } else {
+                    // Handle the case where no query parameters are present
+                    return '/panel/get/categories/';
+                }
+
+            };
 
             $.ajax({
-                url: (params == undefined) ? `/panel/get/categories/` : `/panel/get/category/${params.title}/${params.lang}/${params.id}`
+                url: __Query__String__()
                 , type: "GET"
                 , success: function(result) {
                     let __Temp__ = '';
