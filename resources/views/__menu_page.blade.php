@@ -43,7 +43,7 @@
 
                     </ul>
                 </div>
-                <div id="__List__Of__Products__" class="w-full mt-5 p-2">
+                <div id="__List__Of__Products__" class="w-full mt-5 p-2 h-[57vh] overflow-y-scroll">
 
                 </div>
             </div>
