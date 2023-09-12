@@ -43,8 +43,11 @@
 
                     </ul>
                 </div>
-                <div id="__List__Of__Products__" class="w-full mt-5 p-2 h-[57vh] overflow-y-scroll">
+                <div class="w-full mt-5 p-2">
+                    <div class="border-t-2 border-b-2 border-[rgba(215,4,120,0.3)] py-6 mb-2">
 
+                    </div>
+                    <div id="__List__Of__Products__" class="w-full h-[45vh] overflow-y-scroll"></div>
                 </div>
             </div>
         </div>
@@ -126,7 +129,7 @@
                         __Temp__ += `
                             <li style="width:100%;height:100%;">
                                 <button style="width:75px;height:65px;padding:0px 5px;">
-                                    <img style="width:100%;height:100%;border:${result.__selected__category__.id == item.id ? '3px solid red;' : '1px solid transparent;'} border-radius:12px;margin-right:16px;" src="{{ $__Link }}${item.image}"
+                                    <img style="width:100%;height:100%;border:${result.__selected__category__.id == item.id ? '3px solid rgba(215,4,120,0.8);' : '1px solid transparent;'} border-radius:12px;margin-right:16px;" src="{{ $__Link }}${item.image}"
                                 </button>
                             </li>
                         `;
@@ -134,7 +137,7 @@
                     result.__selected__list__.map((item) => {
                         __Temp__2__ +=
                             `
-                        <div style="width:100%;display:flex;border:1px solid transparent;border-radius:10px;margin:10px 0px;" class="box-shodow">
+                        <div style="width:99%;display:flex;border:2px solid rgba(215,4,120,0.8);border-radius:10px;margin:10px 0px;" class="box-shodow">
                             <div style="width:30%;padding:2px">
                                 <img style="border-radius:10px;" src="{{ $__Link }}${item.image}"/>
                             </div>
