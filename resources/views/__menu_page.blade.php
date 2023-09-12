@@ -101,10 +101,10 @@
                     if (params.id !== false && params.id !== '' && params.title !== false && params.title !== '' && params.lang !== false && params.lang !== '') {
                         return `/panel/get/category/${params.title}/${params.lang}/${params.id}`
                     } else {
-                        if (params.lang !== false && params.lang !== '') {
+                        if (params.lang !== false && params.lang !== '' && params.lang !== 'tr') {
                             return '/panel/get/categories/' + params.lang.toLowerCase();
                         } else {
-                            
+
                             return '/panel/get/categories/';
                         }
 
@@ -124,10 +124,14 @@
                 url: __Query__String__()
                 , type: "GET"
                 , success: function(result) {
-                    console.log(result)
                     let __Temp__ = '';
                     let __Temp__2__ = '';
                     let __Temp__4__ = '';
+                    let __Lang__Detector__ = '';
+                    console.log(__Query__String__())
+                    if (__Query__String__().split('/').length === 5) {
+                        __Lang__Detector__ = (__Query__String__().split('/'))[4]
+                    }
                     const __categorization__data__function__ = (data) => {
                         window.location.replace(`/panel?title=${data.title}&lang=${data.lang}&id=${data.id}`)
                         // Add your logic here to handle the click event
@@ -145,7 +149,7 @@
                     result.__selected__list__.map((item) => {
                         __Temp__2__ +=
                             `
-                        <div style="width:99%;display:flex;border:2px solid rgba(215,4,120,0.8);border-radius:10px;margin:10px 0px;" class="box-shodow">
+                        <div style="direction:${__Lang__Detector__=='ar'?'rtl':'ltr'};width:99%;display:flex;border:2px solid rgba(215,4,120,0.8);border-radius:10px;margin:10px 0px;" class="box-shodow">
                             <div style="width:30%;padding:2px">
                                 <img style="border-radius:10px;width:100%;height:100px;" src="{{ $__Link }}${item.image}"/>
                             </div>
@@ -163,7 +167,7 @@
 
                     $('#__List__Of__Categories__').html(__Temp__);
                     $('#__List__Of__Products__').html(__Temp__2__);
-                    $('#__categorization__title__').html(`<span style="color:rgba(215,4,120,0.9);font-size:20px;font-weight:500;letter-spacing: 1px;">${result.__selected__list__[0].title}</span>`);
+                    $('#__categorization__title__').html(`<div style="direction:${__Lang__Detector__=='ar'?'rtl':'ltr'};color:rgba(215,4,120,0.9);font-size:20px;font-weight:500;letter-spacing: 1px;width:100%;padding:0px 20px;">${result.__selected__list__[0].title}</div>`);
                     // Add a click event handler for the <li> elements __categorization__title__
                     $('#__List__Of__Categories__ li').click(function() {
                         // Call the function with the item data
