@@ -128,10 +128,13 @@
                     let __Temp__2__ = '';
                     let __Temp__4__ = '';
                     let __Lang__Detector__ = '';
+                    let __Price__Translation__ = 'Kişi Başı'
                     console.log(__Query__String__())
                     if (__Query__String__().split('/').length === 5) {
                         __Lang__Detector__ = (__Query__String__().split('/'))[4]
                     }
+                    if(__Lang__Detector__=='en'){__Price__Translation__='per person'}
+                    if(__Lang__Detector__=='ar'){__Price__Translation__='للشخص الواحد'}
                     const __categorization__data__function__ = (data) => {
                         window.location.replace(`/panel?title=${data.title}&lang=${data.lang}&id=${data.id}`)
                         // Add your logic here to handle the click event
@@ -156,8 +159,10 @@
                             <div style="width:70%;padding:5px 10px;position:relative;">
                                 <div title="${item.contentHeader}" style="color:#000;font-size:18px;font-weight:500;">${item.contentHeader.slice(0,30)}</div>
                                 <div title="${item.contentBody}" style="color:#000;">${item.contentBody.slice(0,30)}</div>
-                                <div style="width:100%;display:flex;position:absolute;bottom:6px">
-                                    <div style="font-weight:400;padding:0px 5px;margin-right:20px;">Kişi Başı</div>
+                                <div style="width:100%;display:flex;position:absolute;bottom:6px direction:${__Lang__Detector__=='ar'?'ltr':'rtl'}">
+                                    <div style="font-weight:400;padding:0px 5px;margin-right:20px;">
+                                       ${__Price__Translation__} 
+                                    </div>
                                     <div style="font-weight:400;padding:0px 5px;">${item.price}₺</div>
                                 </div>
                             </div>
