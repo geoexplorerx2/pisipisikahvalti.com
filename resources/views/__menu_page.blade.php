@@ -43,6 +43,9 @@
 
                     </ul>
                 </div>
+                <div id="__List__Of__Products__" class="w-full mt-5 p-2">
+
+                </div>
             </div>
         </div>
     </div>
@@ -113,7 +116,7 @@
                 , type: "GET"
                 , success: function(result) {
                     let __Temp__ = '';
-
+                    let __Temp__2__ = '';
                     const __categorization__data__function__ = (data) => {
                         window.location.replace(`/panel?title=${data.title}&lang=${data.lang}&id=${data.id}`)
                         // Add your logic here to handle the click event
@@ -128,10 +131,27 @@
                             </li>
                         `;
                     });
-
+                    result.__selected__list__.map((item) => {
+                        __Temp__2__ +=
+                            `
+                        <div style="width:100%;display:flex;border:1px solid transparent;border-radius:10px;margin:10px 0px;" class="box-shodow">
+                            <div style="width:30%;padding:2px">
+                                <img style="border-radius:10px;" src="{{ $__Link }}${item.image}"/>
+                            </div>
+                            <div style="width:70%;padding:5px 10px;position:relative;">
+                                <div title="${item.contentHeader}" style="color:#000;font-size:18px;font-weight:500;">${item.contentHeader.slice(0,30)}</div>
+                                <div title="${item.contentBody}" style="color:#000;">${item.contentBody.slice(0,30)}</div>
+                                <div style="width:100%;display:flex;position:absolute;bottom:6px">
+                                    <div style="font-weight:400;padding:0px 5px;">Kişi Başı</div>
+                                    <div style="font-weight:400;padding:0px 5px;">${item.price}₺</div>
+                                </div>
+                            </div>
+                        </div>
+                        `
+                    })
                     $('#__List__Of__Categories__').html(__Temp__);
-
-                    // Add a click event handler for the <li> elements
+                    $('#__List__Of__Products__').html(__Temp__2__);
+                    // Add a click event handler for the <li> elements 
                     $('#__List__Of__Categories__ li').click(function() {
                         // Call the function with the item data
                         __categorization__data__function__(result.__categories[$(this).index()]);
