@@ -440,7 +440,7 @@ class __Home_Controller extends Controller
     {
         $__selected__category__ = CategoriesModel::first();
         $__selected__list__ = ListsModel::where('lang', "TR")->where('title', 'KAHVALTI')->get();
-        $__categories = CategoriesModel::where('lang','TR')->get();
+        $__categories = CategoriesModel::where('lang', 'TR')->get();
         $__lists = ListsModel::all();
         $__Music = __Music_Model::where('status', 1)->get();
         $__Wallpaper = __Wallpaper_Model::where('status', 1)->get();
@@ -457,10 +457,53 @@ class __Home_Controller extends Controller
             'lang' => $lang,
         ]);
     }
-    public function __get__category__($title,$lang,$id){
-        $__selected__category__ = (CategoriesModel::where('title',$title)->where('lang',$lang)->get())[0];
+    public function __get__categories__en()
+    {
+        $__selected__category__ = CategoriesModel::first();
+        $__selected__list__ = ListsModel::where('lang', "EN")->where('title', 'Breakfast')->get();
+        $__categories = CategoriesModel::where('lang', 'EN')->get();
+        $__lists = ListsModel::all();
+        $__Music = __Music_Model::where('status', 1)->get();
+        $__Wallpaper = __Wallpaper_Model::where('status', 1)->get();
+        $__Link = env('HOST_NAME');
+        $lang = 'EN';
+        return response()->json([
+            '__categories' => $__categories,
+            '__lists' => $__lists,
+            '__Music' => $__Music,
+            '__Wallpaper' => $__Wallpaper,
+            '__Link' => $__Link,
+            '__selected__category__' => $__selected__category__,
+            '__selected__list__' => $__selected__list__,
+            'lang' => $lang,
+        ]);
+    }
+    public function __get__categories__ar()
+    {
+        $__selected__category__ = CategoriesModel::first();
+        $__selected__list__ = ListsModel::where('lang', "AR")->where('title', 'إفطار')->get();
+        $__categories = CategoriesModel::where('lang', 'AR')->get();
+        $__lists = ListsModel::all();
+        $__Music = __Music_Model::where('status', 1)->get();
+        $__Wallpaper = __Wallpaper_Model::where('status', 1)->get();
+        $__Link = env('HOST_NAME');
+        $lang = 'AR';
+        return response()->json([
+            '__categories' => $__categories,
+            '__lists' => $__lists,
+            '__Music' => $__Music,
+            '__Wallpaper' => $__Wallpaper,
+            '__Link' => $__Link,
+            '__selected__category__' => $__selected__category__,
+            '__selected__list__' => $__selected__list__,
+            'lang' => $lang,
+        ]);
+    }
+    public function __get__category__($title, $lang, $id)
+    {
+        $__selected__category__ = (CategoriesModel::where('title', $title)->where('lang', $lang)->get())[0];
         $__selected__list__ = ListsModel::where('lang', $lang)->where('category_id', $id)->get();
-        $__categories = CategoriesModel::where('lang',$lang)->get();
+        $__categories = CategoriesModel::where('lang', $lang)->get();
         $__lists = ListsModel::all();
         $__Music = __Music_Model::where('status', 1)->get();
         $__Wallpaper = __Wallpaper_Model::where('status', 1)->get();

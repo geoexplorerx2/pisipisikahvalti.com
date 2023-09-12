@@ -101,7 +101,13 @@
                     if (params.id !== false && params.id !== '' && params.title !== false && params.title !== '' && params.lang !== false && params.lang !== '') {
                         return `/panel/get/category/${params.title}/${params.lang}/${params.id}`
                     } else {
-                        return '/panel/get/categories/';
+                        if (params.lang !== false && params.lang !== '') {
+                            return '/panel/get/categories/' + params.lang.toLowerCase();
+                        } else {
+                            
+                            return '/panel/get/categories/';
+                        }
+
                     }
                     // Get the count of query parameters
                     var queryParameterCount = Object.keys(params).length;
@@ -118,6 +124,7 @@
                 url: __Query__String__()
                 , type: "GET"
                 , success: function(result) {
+                    console.log(result)
                     let __Temp__ = '';
                     let __Temp__2__ = '';
                     let __Temp__4__ = '';
@@ -156,7 +163,7 @@
 
                     $('#__List__Of__Categories__').html(__Temp__);
                     $('#__List__Of__Products__').html(__Temp__2__);
-                    $('#__categorization__title__').html(`<span style="color:rgba(215,4,120,0.9);font-size:20px;font-weight:500;letter-spacing: 1px;">${result.__selected__category__.title}</span>`);
+                    $('#__categorization__title__').html(`<span style="color:rgba(215,4,120,0.9);font-size:20px;font-weight:500;letter-spacing: 1px;">${result.__selected__list__[0].title}</span>`);
                     // Add a click event handler for the <li> elements __categorization__title__
                     $('#__List__Of__Categories__ li').click(function() {
                         // Call the function with the item data
