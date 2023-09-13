@@ -129,9 +129,19 @@
                     let __Temp__4__ = '';
                     let __Lang__Detector__ = 'TR';
                     let __Price__Translation__ = 'Kişi Başı'
+                    let __Language__Secion__ = `
+                        <option value="TR" selected>Türkçe</option>
+                        <option value="EN" >English</option>
+                        <option value="AR" >Arabic</option>
+                    `
                     let __url__ = (new URL(location.href)).searchParams;
-                    if(__url__.get('lang') !== null && __url__.get('lang') !== ''){
-                        __Lang__Detector__ = __url__.get('lang').toLowerCase() 
+                    if (__url__.get('lang') !== null && __url__.get('lang') !== '') {
+                        __Lang__Detector__ = __url__.get('lang').toLowerCase()
+                        __Language__Secion__ = `
+                        <option value="TR" ${__url__.get('lang')==='TR'?'selected':null}>Türkçe</option>
+                        <option value="EN" ${__url__.get('lang')==='EN'?'selected':null}>English</option>
+                        <option value="AR" ${__url__.get('lang')==='AR'?'selected':null}>Arabic</option>
+                    `
                     }
                     if (__Lang__Detector__ == 'en') {
                         __Price__Translation__ = 'per person'
@@ -173,7 +183,7 @@
                         </div>
                         `
                     })
-                    
+                    $('#languages').html(__Language__Secion__)
                     $('#__List__Of__Categories__').html(__Temp__);
                     $('#__List__Of__Products__').html(__Temp__2__);
                     $('#__categorization__title__').html(`<div style="direction:${__Lang__Detector__=='ar'?'rtl':'ltr'};color:rgba(215,4,120,0.9);font-size:20px;font-weight:500;letter-spacing: 1px;width:100%;padding:0px 20px;">${result.__selected__list__[0].title}</div>`);
