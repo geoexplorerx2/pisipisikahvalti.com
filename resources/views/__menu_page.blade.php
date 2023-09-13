@@ -235,9 +235,11 @@
                     'display': 'none'
                 })
             })
-            $('#__pre__loader__').css({
-                'display': 'none'
-            })
+            setTimeout(() => {
+                $('#__pre__loader__').css({
+                    'display': 'none'
+                })
+            }, 2000)
         });
 
     </script>
