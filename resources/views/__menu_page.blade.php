@@ -173,7 +173,7 @@
                         __Temp__ += `
                             <li style="width:100%;height:100%;">
                                 <button style="width:80px;height:65px;padding:0px 5px;">
-                                    <img style="width:100%;height:100%;border:${result.__selected__category__.id == item.id ? '3px solid rgba(215,4,120,0.8);' : '1px solid transparent;'} border-radius:12px;margin-right:16px;" src="{{ $__Link }}${item.image}"
+                                    <img class="${result.__selected__category__.id == item.id ? 'box-shodow' : ''}" style="width:100%;height:100%; border-radius:12px;margin-right:16px;" src="{{ $__Link }}${item.image}"
                                 </button>
                             </li>
                         `;
@@ -181,7 +181,7 @@
                     result.__selected__list__.map((item) => {
                         __Temp__2__ +=
                             `
-                        <div style="direction:${__Lang__Detector__=='ar'?'rtl':'ltr'};width:99%;display:flex;border:2px solid rgba(215,4,120,0.8);border-radius:10px;margin:10px 0px;" class="box-shodow">
+                        <div style="direction:${__Lang__Detector__=='ar'?'rtl':'ltr'};width:98%;display:flex;border:1px solid transparent;border-radius:3px;margin:10px 5px;" class="box-shodow">
                             <div style="width:30%;padding:2px">
                                 <img style="border-radius:10px;width:100%;height:100px;" src="{{ $__Link }}${item.image}"/>
                             </div>
