@@ -21,7 +21,7 @@
             </div>
             <div class="w-full">
                 <div class="w-full flex">
-                    <div class="w-[30%]">
+                    <div class="w-[35%]">
                         <div class="px-2 mt-8 mx-2 rounded-lg bg-gray-700 py-3">
                             <select name="lang" id="languages" class="h-full focus:outline-none text-gray-900 text-sm rounded-lg block w-full  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                 <option value="TR" {{ $lang=="TR"?'selected':null }}>Türkçe</option>
