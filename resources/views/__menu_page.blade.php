@@ -194,7 +194,7 @@
                     __url__.get('lang') !== '' &&
                     __url__.get('id') !== ''
                 ) {
-                    console.log('THERE IS NO PROCESS')
+                    window.location.href = '/panel/?lang=' + $('#languages').val()
                 } else {
                     if (__url__.get('lang') === null || __url__.get('lang') === '') {
                         window.location.href = '/panel/?lang=' + $('#languages').val()
