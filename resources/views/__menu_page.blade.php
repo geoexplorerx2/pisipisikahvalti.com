@@ -199,12 +199,7 @@
                     if (__url__.get('lang') === null || __url__.get('lang') === '') {
                         window.location.href = '/panel/?lang=' + $('#languages').val()
                     } else {
-                        if (__url__.get('lang') === 'TR') {
-                            window.location.href = '/panel/'
-                        } else {
-                            window.location.href = '/panel/?lang=' + $('#languages').val()
-                        }
-
+                        window.location.href = '/panel/?lang=' + $('#languages').val()
                     }
                 }
 
