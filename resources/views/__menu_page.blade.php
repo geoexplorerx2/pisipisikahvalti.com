@@ -101,7 +101,7 @@
                     if (params.id !== false && params.id !== '' && params.title !== false && params.title !== '' && params.lang !== false && params.lang !== '') {
                         return `/panel/get/category/${params.title}/${params.lang}/${params.id}`
                     } else {
-                        if (params.lang !== false && params.lang !== '' && params.lang !== 'tr') {
+                        if (params.lang !== false && params.lang !== '' && params.lang !== 'TR') {
                             return '/panel/get/categories/' + params.lang.toLowerCase();
                         } else {
 
@@ -133,8 +133,12 @@
                     if (__Query__String__().split('/').length === 5) {
                         __Lang__Detector__ = (__Query__String__().split('/'))[4]
                     }
-                    if(__Lang__Detector__=='en'){__Price__Translation__='per person'}
-                    if(__Lang__Detector__=='ar'){__Price__Translation__='للشخص الواحد'}
+                    if (__Lang__Detector__ == 'en') {
+                        __Price__Translation__ = 'per person'
+                    }
+                    if (__Lang__Detector__ == 'ar') {
+                        __Price__Translation__ = 'للشخص الواحد'
+                    }
                     const __categorization__data__function__ = (data) => {
                         window.location.replace(`/panel?title=${data.title}&lang=${data.lang}&id=${data.id}`)
                         // Add your logic here to handle the click event
@@ -180,6 +184,31 @@
                     });
                 }
             });
+            $('#languages').on('change', function() {
+                let __url__ = (new URL(location.href)).searchParams;
+                if (
+                    __url__.get('title') !== null &&
+                    __url__.get('lang') !== null &&
+                    __url__.get('id') !== null &&
+                    __url__.get('title') !== '' &&
+                    __url__.get('lang') !== '' &&
+                    __url__.get('id') !== ''
+                ) {
+                    console.log('THERE IS NO PROCESS')
+                } else {
+                    if (__url__.get('lang') === null || __url__.get('lang') === '') {
+                        window.location.href = '/panel/?lang=' + $('#languages').val()
+                    } else {
+                        if (__url__.get('lang') === 'TR') {
+                            window.location.href = '/panel/'
+                        } else {
+                            window.location.href = '/panel/?lang=' + $('#languages').val()
+                        }
+
+                    }
+                }
+
+            })
         });
 
     </script>

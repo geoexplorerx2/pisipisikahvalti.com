@@ -353,16 +353,25 @@ class __Home_Controller extends Controller
         }
         return back();
     }
-    public function __menu()
+    public function __menu(Request $request)
     {
+        $__language__ = "TR";
+        $__title__ = "KAHVALTI";
+        if($request->lang!=null){
+            $__language__ = strtoupper($request->lang);
+        }
+        if($request->title!=null){
+            $__language__ = $request->title;
+        }
+        
         $__selected__category__ = CategoriesModel::first();
-        $__selected__list__ = ListsModel::where('lang', "TR")->where('title', 'KAHVALTI')->get();
+        $__selected__list__ = ListsModel::where('lang', $__language__)->where('title', 'KAHVALTI')->get();
         $__categories = CategoriesModel::all();
         $__lists = ListsModel::all();
         $__Music = __Music_Model::where('status', 1)->get();
         $__Wallpaper = __Wallpaper_Model::where('status', 1)->get();
         $__Link = env('HOST_NAME');
-        $lang = 'TR';
+        $lang = $__language__;
         return view('__menu_page', compact(
             '__categories',
             '__lists',
