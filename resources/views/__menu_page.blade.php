@@ -31,7 +31,7 @@
                         </div>
                     </div>
                     <div class="w-[60%] p-1 flex justify-center">
-                        <img class="w-[60%] mt-4" src="https://api.hitrooms.com/public/images/logo.png" />
+                        <img class="w-[40%] mt-4" src="https://api.hitrooms.com/public/images/logo.png" />
                     </div>
                     <div>
                         <div class="flex mt-8 mx-5">
