@@ -182,7 +182,7 @@
                             <div style="width:70%;padding:5px 10px;position:relative;">
                                 <div title="${item.contentHeader}" style="color:#000;font-size:18px;font-weight:500;">${item.contentHeader.slice(0,30)}</div>
                                 <div title="${item.contentBody}" style="color:#000;">${item.contentBody.slice(0,30)}</div>
-                                <div style="width:100%;display:flex;position:absolute;bottom:6px direction:${__Lang__Detector__=='ar'?'ltr':'rtl'}">
+                                <div style="width:100%;position:absolute;bottom:0;display:flex;padding:5px 0px;">
                                     <div style="font-weight:400;padding:0px 5px;margin-right:20px;">
                                        ${__Price__Translation__} 
                                     </div>
