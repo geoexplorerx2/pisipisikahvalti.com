@@ -127,11 +127,11 @@
                     let __Temp__ = '';
                     let __Temp__2__ = '';
                     let __Temp__4__ = '';
-                    let __Lang__Detector__ = '';
+                    let __Lang__Detector__ = 'TR';
                     let __Price__Translation__ = 'Kişi Başı'
-                    console.log(__Query__String__())
-                    if (__Query__String__().split('/').length === 5) {
-                        __Lang__Detector__ = (__Query__String__().split('/'))[4]
+                    let __url__ = (new URL(location.href)).searchParams;
+                    if(__url__.get('lang') !== null && __url__.get('lang') !== ''){
+                        __Lang__Detector__ = __url__.get('lang').toLowerCase() 
                     }
                     if (__Lang__Detector__ == 'en') {
                         __Price__Translation__ = 'per person'
@@ -173,7 +173,7 @@
                         </div>
                         `
                     })
-
+                    
                     $('#__List__Of__Categories__').html(__Temp__);
                     $('#__List__Of__Products__').html(__Temp__2__);
                     $('#__categorization__title__').html(`<div style="direction:${__Lang__Detector__=='ar'?'rtl':'ltr'};color:rgba(215,4,120,0.9);font-size:20px;font-weight:500;letter-spacing: 1px;width:100%;padding:0px 20px;">${result.__selected__list__[0].title}</div>`);
