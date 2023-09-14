@@ -40,8 +40,10 @@
                         <line class="cls-1" x1="12" x2="36" y1="36" y2="12" />
                     </svg>
                 </div>
-                <div id="__img__section__" class="w-full flex justify-center mt-5">
+                <div class="w-full flex justify-center mt-5">
+                    <div id="__img__section__" class="w-[300px] h-[300px] rounded-lg">
 
+                    </div>
                 </div>
                 <div id="__content__section__" class="w-full flex justify-center mt-5">
 
@@ -242,6 +244,7 @@
                                 'display': 'flex'
                             })
                             let __row__ = result.__lists.filter((item) => item.id == __section__id__)[0];
+                            $('#__img__section__').html(`<img style="width:100%;height:100%;border-radius:10px;" src="{{ $__Link }}${__row__.image}" />`)
                             $('#__modal__section__').css({
                                 'display': 'block'
                             })
