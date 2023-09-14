@@ -19,6 +19,34 @@
                     <div class="text-2xl mt-10 translate-x-3">Please , Wait . . .</div>
                 </div>
             </div>
+            <div id="__modal__section__" class="absolute hidden top-0 z-40 w-full min-h-screen bg-white">
+                <div style="width:100%;display:flex;justify-content:end;" class="px-5 py-3 cursor-pointer">
+                    <svg class="__close__btn__function__" xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 48 48" data-name="Layer 1" id="Layer_1">
+                        <defs>
+                            <style>
+                                .cls-1 {
+                                    fill: none;
+                                    stroke: #1d1d1b;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                    stroke-width: 2px;
+                                }
+
+                            </style>
+                        </defs>
+                        <title />
+                        <circle class="cls-1" cx="24" cy="24" r="23" />
+                        <line class="cls-1" x1="12" x2="36" y1="12" y2="36" />
+                        <line class="cls-1" x1="12" x2="36" y1="36" y2="12" />
+                    </svg>
+                </div>
+                <div id="__img__section__" class="w-full flex justify-center mt-5">
+
+                </div>
+                <div id="__content__section__" class="w-full flex justify-center mt-5">
+
+                </div>
+            </div>
             <div class="w-full">
                 <div class="w-full flex">
                     <div class="w-[35%]">
@@ -181,7 +209,7 @@
                     result.__selected__list__.map((item) => {
                         __Temp__2__ +=
                             `
-                        <div style="direction:${__Lang__Detector__=='ar'?'rtl':'ltr'};width:98%;display:flex;border:1px solid transparent;border-radius:3px;margin:10px 5px;" class="box-shodow">
+                        <div id="${item.id}" style="direction:${__Lang__Detector__=='ar'?'rtl':'ltr'};width:98%;display:flex;border:1px solid transparent;border-radius:3px;margin:10px 5px;" class="box-shodow">
                             <div style="width:30%;padding:2px">
                                 <img style="border-radius:10px;width:100%;height:100px;" src="{{ $__Link }}${item.image}"/>
                             </div>
@@ -205,11 +233,33 @@
                     // Add a click event handler for the <li> elements __categorization__title__
                     $('#__List__Of__Categories__ li').click(function() {
                         // Call the function with the item data
-
                         __categorization__data__function__(result.__categories[$(this).index()]);
                     });
+                    $('#__List__Of__Products__ div').on('click', function() {
+                        let __section__id__ = $(this).attr('id');
+                        if (__section__id__ !== undefined) {
+                            $('#__pre__loader__').css({
+                                'display': 'flex'
+                            })
+                            let __row__ = result.__lists.filter((item) => item.id == __section__id__)[0];
+                            $('#__modal__section__').css({
+                                'display': 'block'
+                            })
+                            setTimeout(() => {
+                                $('#__pre__loader__').css({
+                                    'display': 'none'
+                                })
+                            }, 1000)
+                        }
+
+                    })
                 }
             });
+            $('.__close__btn__function__').on('click', function() {
+                $('#__modal__section__').css({
+                    'display': 'none'
+                })
+            })
             $('#languages').on('change', function() {
                 $('#__pre__loader__').css({
                     'display': 'flex'
