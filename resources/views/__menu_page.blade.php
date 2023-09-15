@@ -55,11 +55,9 @@
 
                     </div>
                 </div>
-                <div class="w-full flex justify-center mt-5">
-                    <div id="__price__section__" class="w-[80%] flex">
-                        <div class="text-xl"><span id="__unit__"></span></div>
-                        <div class="text-xl"><span id="__price__"></span>₺</div>
-                    </div>
+
+                <div id="__modal__language__section__" class="w-full flex justify-center mt-5">
+
                 </div>
             </div>
             <div class="w-full">
@@ -257,12 +255,43 @@
                                 'display': 'flex'
                             })
                             let __row__ = result.__lists.filter((item) => item.id == __section__id__)[0];
-                            
+                            let __url__ = (new URL(location.href)).searchParams;
+                            let __unit__ = 'Kişi Başı'
+                            if (__url__.get('lang') !== '' && __url__.get('lang') !== null) {
+                                if (__url__.get('lang') == 'EN') {
+                                    __unit__ = 'per person'
+                                }
+                                if (__url__.get('lang') == 'AR') {
+                                    __unit__ = 'للشخص الواحد'
+                                }
+                            }
                             $('#__img__section__').html(`<img style="width:100%;height:100%;border-radius:10px;" src="{{ $__Link }}${__row__.image}" />`)
                             $('#__header__section__').html(`<span>${__row__.contentHeader}</span>`)
+                            if (__url__.get('lang') === 'AR') {
+                                $('#__header__section__').css({
+                                    'direction': 'rtl'
+                                })
+                            } else {
+                                $('#__header__section__').css({
+                                    'direction': 'ltr'
+                                })
+                            }
                             $('#__content__section__').html(`<span>${__row__.contentBody}</span>`)
-                            $('#__price__').html(`${__row__.price}`)
-                            //$('#__unit__').html(`${}`)
+                            if (__url__.get('lang') === 'AR') {
+                                $('#__content__section__').css({
+                                    'direction': 'rtl'
+                                })
+                            } else {
+                                $('#__content__section__').css({
+                                    'direction': 'ltr'
+                                })
+                            }
+                            $('#__modal__language__section__').html(`
+                                <div style="width:80%;display:flex;direction:${__url__.get('lang')=='AR'?'rtl':'ltr'}">
+                                    <div style="font-size:20px;margin:0px 10px;"><span>${ __unit__ }</span></div>
+                                    <div style="font-size:20px;margin:0px 10px;"><span>${__row__.price}</span>₺</div>
+                                </div>
+                            `)
                             $('#__modal__section__').css({
                                 'display': 'block'
                             })
