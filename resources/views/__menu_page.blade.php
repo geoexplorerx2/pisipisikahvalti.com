@@ -45,8 +45,21 @@
 
                     </div>
                 </div>
-                <div id="__content__section__" class="w-full flex justify-center mt-5">
+                <div class="w-full flex justify-center mt-5">
+                    <div id="__header__section__" class="w-[80%] text-2xl">
 
+                    </div>
+                </div>
+                <div class="w-full flex justify-center mt-5">
+                    <div id="__content__section__" class="w-[80%] text-base">
+
+                    </div>
+                </div>
+                <div class="w-full flex justify-center mt-5">
+                    <div id="__price__section__" class="w-[80%] flex">
+                        <div class="text-xl"><span id="__unit__"></span></div>
+                        <div class="text-xl"><span id="__price__"></span>₺</div>
+                    </div>
                 </div>
             </div>
             <div class="w-full">
@@ -244,7 +257,12 @@
                                 'display': 'flex'
                             })
                             let __row__ = result.__lists.filter((item) => item.id == __section__id__)[0];
+                            
                             $('#__img__section__').html(`<img style="width:100%;height:100%;border-radius:10px;" src="{{ $__Link }}${__row__.image}" />`)
+                            $('#__header__section__').html(`<span>${__row__.contentHeader}</span>`)
+                            $('#__content__section__').html(`<span>${__row__.contentBody}</span>`)
+                            $('#__price__').html(`${__row__.price}`)
+                            //$('#__unit__').html(`${}`)
                             $('#__modal__section__').css({
                                 'display': 'block'
                             })
