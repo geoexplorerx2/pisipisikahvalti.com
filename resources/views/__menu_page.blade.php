@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
     @vite('resources/css/app.css')
 </head>
-<body style="background-image:url({{ $__Link.$__Wallpaper[0]->wallpaper }});background-size:cover;" class="Kanit">
+<body style="background-image:url({{ $__Link.'/uploads/'.$__Wallpaper[0]->wallpaper }});background-size:cover;" class="Kanit">
     <div class="relative w-full min-h-screen flex justify-center">
         <div class="relative w-full min-h-screen max-w-[600px] bg-white opacity-[0.9]">
             <div id="__pre__loader__" class="absolute flex top-0 z-50 w-full min-h-screen bg-white justify-center items-center">
@@ -64,7 +64,7 @@
                 <div class="w-full flex">
                     <div class="w-[35%]">
                         <div class="px-2 mt-8 mx-2 rounded-lg bg-gray-700 py-3">
-                            <select name="lang" id="languages" class="h-full focus:outline-none text-gray-900 text-sm rounded-lg block w-full  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <select name="lang" id="languages" class="h-full focus:outline-none bg-gray-700 text-gray-900 text-sm rounded-lg block w-full  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                 <option value="TR" {{ $lang=="TR"?'selected':null }}>Türkçe</option>
                                 <option value="EN" {{ $lang=="EN"?'selected':null }}>English</option>
                                 <option value="AR" {{ $lang=="AR"?'selected':null }}>Arabic</option>
@@ -214,7 +214,7 @@
                         __Temp__ += `
                             <li style="width:100%;height:100%;">
                                 <button style="width:80px;height:65px;padding:0px 5px;">
-                                    <img class="${result.__selected__category__.id == item.id ? 'box-shodow' : ''}" style="width:100%;height:100%; border-radius:12px;margin-right:16px;" src="{{ $__Link }}${item.image}"
+                                    <img class="${result.__selected__category__.id == item.id ? 'box-shodow' : ''}" style="width:100%;height:100%; border-radius:12px;margin-right:16px;" src="{{ $__Link }}/uploads/${item.image}"
                                 </button>
                             </li>
                         `;
@@ -224,7 +224,7 @@
                             `
                         <div id="${item.id}" style="direction:${__Lang__Detector__=='ar'?'rtl':'ltr'};width:98%;display:flex;border:1px solid transparent;border-radius:3px;margin:10px 5px;" class="box-shodow">
                             <div style="width:30%;padding:2px">
-                                <img style="border-radius:10px;width:100%;height:100px;" src="{{ $__Link }}${item.image}"/>
+                                <img style="border-radius:10px;width:100%;height:100px;" src="{{ $__Link }}/uploads/${item.image}"/>
                             </div>
                             <div style="width:70%;padding:5px 10px;position:relative;">
                                 <div title="${item.contentHeader}" style="color:#000;font-size:18px;font-weight:500;">${item.contentHeader.slice(0,30)}</div>
@@ -265,7 +265,7 @@
                                     __unit__ = 'للشخص الواحد'
                                 }
                             }
-                            $('#__img__section__').html(`<img style="width:100%;height:100%;border-radius:10px;" src="{{ $__Link }}${__row__.image}" />`)
+                            $('#__img__section__').html(`<img style="width:100%;height:100%;border-radius:10px;" src="{{ $__Link }}/uploads/${__row__.image}" />`)
                             $('#__header__section__').html(`<span>${__row__.contentHeader}</span>`)
                             if (__url__.get('lang') === 'AR') {
                                 $('#__header__section__').css({
