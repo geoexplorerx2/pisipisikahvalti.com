@@ -83,7 +83,7 @@
                                 </svg>
                             </div>
                             <div class="w-[10%]">
-                                <audio src="{{ $__Link.$__Music[0]->music }}"></audio>
+                                <audio src="{{ $__Link.'/uploads/'.$__Music[0]->music }}"></audio>
                             </div>
                         </div>
                     </div>
