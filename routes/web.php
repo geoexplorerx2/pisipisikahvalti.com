@@ -39,9 +39,13 @@ Route::post('/wallpaper/upload', [__Home_Controller::class, '__upload_wallpaper'
 Route::post('/upload/edit', [__Home_Controller::class, '__upload__edit__'])->middleware('__user_authentication')->name('__upload__edit__');
 
 /** MENU__VIEWS */
-Route::get('/',[__Home_Controller::class, '__menu']);
+Route::get('/',[__Home_Controller::class, '__menu'])->name('menu');
 
 /** API */
+Route::get('/get/categories/',[__Home_Controller::class, '__get__categories__'])->name('__get__categories__');
+Route::get('/get/categories/en',[__Home_Controller::class, '__get__categories__en'])->name('__get__categories__en');
+Route::get('/get/categories/ar',[__Home_Controller::class, '__get__categories__ar'])->name('__get__categories__ar');
+Route::get('/get/category/{title}/{lang}/{id}',[__Home_Controller::class, '__get__category__'])->name('__get__category__');
 Route::get('/list/ajax/{id}', [__Home_Controller::class, '__api__List_Edit'])->middleware('__user_authentication')->name('__api__List_Edit');
 Route::get('/category/ajax/{id}', [__Home_Controller::class, '__api__category_Edit'])->middleware('__user_authentication')->name('__api__category_Edit');
 Route::get('/wallpaper/ajax/{id}', [__Home_Controller::class, '__api__wallpaper_Edit'])->middleware('__user_authentication')->name('__api__wallpaper_Edit');

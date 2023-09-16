@@ -14,7 +14,7 @@
                 </div>
             </div>
             <div>
-                <label for="language" class="block mb-2 text-sm font-medium text-[#000]">Select a Language</label>
+                <label for="language" class="block mb-2 text-sm font-medium text-[#000]">Bir dil seç</label>
                 <select name="lang" id="language" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-[10px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     
                     <option @if(json_decode(json_encode(session('__editing__activator__')), true)['lang']=='TR') {{ 'selected' }} @endif value="TR">TR</option>
@@ -23,29 +23,29 @@
                 </select>
             </div>
             <div>
-                <label for="title" class="block mb-2 text-sm font-medium text-[#000]">Title</label>
+                <label for="title" class="block mb-2 text-sm font-medium text-[#000]">Başlık</label>
                 <input type="text" name="title" id="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-[11px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={{ json_decode(json_encode(session('__editing__activator__')), true)['title'] }} required>
             </div>
             <div>
-                <label for="contentHeader" class="block mb-2 text-sm font-medium text-[#000]">Content Header</label>
+                <label for="contentHeader" class="block mb-2 text-sm font-medium text-[#000]">İçerik Başlığı</label>
                 <input type="text" name="contentHeader" id="contentHeader" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-[11px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={{ json_decode(json_encode(session('__editing__activator__')), true)['contentHeader'] }} required>
             </div>
             <div>
-                <label for="contentBody" class="block mb-2 text-sm font-medium text-[#000]">Content Body</label>
+                <label for="contentBody" class="block mb-2 text-sm font-medium text-[#000]">İçerik Gövdesi</label>
                 <textarea name="contentBody" type="text" id="contentBody" class=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-[6px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required>
                   {{ json_decode(json_encode(session('__editing__activator__')), true)['contentBody'] }}
                 </textarea>
             </div>
             <div>
-                <label for="website" class="block mb-2 text-sm font-medium text-[#000]">Price</label>
+                <label for="website" class="block mb-2 text-sm font-medium text-[#000]">Fiyat</label>
                 <input name="price" type="number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-[11px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={{ json_decode(json_encode(session('__editing__activator__')), true)['price'] }} required>
             </div>
             <div>
-                <label class="block mb-2 text-sm font-medium text-[#000]" for="file">Upload Image</label>
+                <label class="block mb-2 text-sm font-medium text-[#000]" for="file">Fotoğraf yükleniyor</label>
                 <input class="block py-[8px] w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="file" name="file" type="file">
             </div>
             <div>
-                <label for="text" class="block mb-2 text-sm font-medium text-[#000]">Type</label>
+                <label for="text" class="block mb-2 text-sm font-medium text-[#000]">Tip</label>
                 <select name="type" id="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-[10px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     
                     <option @if(json_decode(json_encode(session('__editing__activator__')), true)['type']==1) {{ 'selected' }} @endif value="1">Enable</option>
@@ -53,9 +53,9 @@
                 </select>
             </div>
             <div>
-                <label for="Category" class="block mb-2 text-sm font-medium text-[#000]">Select an Category</label>
+                <label for="Category" class="block mb-2 text-sm font-medium text-[#000]">Bir Kategori Seçin</label>
                 <select name="Category" id="Category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-[10px] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                    <option selected>Choose a Category</option>
+                    <option selected>Bir kategori seçin</option>
                     @foreach ($__categories as $category)
                     <option @if(json_decode(json_encode(session('__editing__activator__')), true)['category_id']==$category->id) {{ 'selected' }} @endif value="{{ $category->id }}">{{ $category->title }}</option>
                     @endforeach
@@ -64,7 +64,7 @@
             <div></div>
             <div>
                 <button type="submit" class="text-white bg-[#3b5998] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-5 py-5 text-center flex justify-center items-center dark:focus:ring-[#3b5998]/55 w-full">
-                    . . . Update . . .
+                    . . . Güncelleme . . .
                 </button>
             </div>
         </div>

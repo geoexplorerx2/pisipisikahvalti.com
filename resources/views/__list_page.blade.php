@@ -32,7 +32,7 @@
     {{-- List Of Categories  --}}
     <div class="w-full">
         <div class="w-full h-[50px] bg-[#1A5276] flex justify-between items-center">
-            <div class="text-white text-base px-10">Add List</div>
+            <div class="text-white text-base px-10">ürün ekle</div>
             <div class="w-[80%] h-full flex items-center justify-center">
                 <div id="aletSection" style="{{ session('style') }}">
                     {{ session('message') }}
@@ -46,7 +46,7 @@
             <div class="text-gray-900 bg-gray-200 flex-1 rounded-md">
                 <div class="w-full h-[100px] flex justify-end">
                     <button id="MODAL_OPEN_BTN" class="bg-[#075A8F] text-white h-[50%] px-5 m-5 rounded-md">
-                        Add Product
+                        ürün ekle
                     </button>
                 </div>
                 <div class="px-3 py-4 flex justify-center overflow-y-scroll max-h-[71vh]">
@@ -94,10 +94,10 @@
                                 <td class="w-full flex items-center px-3" style="transform: translateY(17px);">
                                     <a href="{{ route('__List_Edit', ['id' => $item->id]) }}" class="w-[50%] flex justify-center" href="#">
                                         <button type="button" class="mx-4 text-sm bg-[#0080ff] hover:bg-[#0080ff] text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">
-                                            Edit
+                                            Düzenle
                                         </button>
                                     </a>
-                                    <a class="w-[50%] flex justify-center"><button onClick="__delete__list__function__({{ $item->id }})" type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button></a>
+                                    <a class="w-[50%] flex justify-center"><button onClick="__delete__list__function__({{ $item->id }})" type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Sil</button></a>
                                 </td>
                             </tr>
                             @php

@@ -53,7 +53,7 @@ class __Home_Controller extends Controller
 
         if ($validator->fails()) {
             return back()->with([
-                'message' => 'some data missed',
+                'message' => 'bazı veriler kaçırıldı',
                 'style' => 'width:90%;height:80%;font-size:20px;border-radius:10px;color:#fff;background: #C0392B;display:flex;justify-content: center;align-items: center;'
             ]);
         }
@@ -67,12 +67,12 @@ class __Home_Controller extends Controller
                 'image' => $fileName
             ])) {
                 return back()->with([
-                    'message' => 'Category added Successfully',
+                    'message' => 'Kategori başarıyla eklendi',
                     'style' => 'width:90%;height:80%;font-size:20px;border-radius:10px;color:#fff;background: #0E6655;display:flex;justify-content: center;align-items: center;'
                 ]);
             } else {
                 return back()->with([
-                    'message' => 'adding Category Failed',
+                    'message' => 'Kategori Ekleme Başarısız',
                     'style' => 'width:90%;height:80%;font-size:20px;border-radius:10px;color:#fff;background: #C0392B;display:flex;justify-content: center;align-items: center;'
                 ]);
             }
@@ -84,7 +84,7 @@ class __Home_Controller extends Controller
         if (CategoriesModel::where('id', $id)->count() > 0) {
             CategoriesModel::find($id)->delete();
             return back()->with([
-                'message' => 'Category deleted Successfully',
+                'message' => 'Kategori başarıyla silindi',
                 'style' => 'width:90%;height:80%;font-size:20px;border-radius:10px;color:#fff;background: #0E6655;display:flex;justify-content: center;align-items: center;'
             ]);
         }
@@ -116,7 +116,7 @@ class __Home_Controller extends Controller
 
         if ($validator->fails()) {
             return back()->with([
-                'message' => 'some data missed',
+                'message' => 'bazı veriler kaçırıldı',
                 'style' => 'width:90%;height:80%;font-size:20px;border-radius:10px;color:#fff;background: #C0392B;display:flex;justify-content: center;align-items: center;'
             ]);
         }
@@ -134,12 +134,12 @@ class __Home_Controller extends Controller
                 'category_id' => $request->Category
             ])) {
                 return back()->with([
-                    'message' => 'List added Successfully',
+                    'message' => 'Liste başarıyla eklendi',
                     'style' => 'width:90%;height:80%;font-size:20px;border-radius:10px;color:#fff;background: #0E6655;display:flex;justify-content: center;align-items: center;'
                 ]);
             } else {
                 return back()->with([
-                    'message' => 'adding List Failed',
+                    'message' => 'Liste Ekleme Başarısız',
                     'style' => 'width:90%;height:80%;font-size:20px;border-radius:10px;color:#fff;background: #C0392B;display:flex;justify-content: center;align-items: center;'
                 ]);
             }
@@ -167,7 +167,7 @@ class __Home_Controller extends Controller
 
         if ($validator->fails()) {
             return back()->with([
-                'message' => 'some data missed',
+                'message' => 'bazı veriler kaçırıldı',
                 'style' => 'width:90%;height:80%;font-size:20px;border-radius:10px;color:#fff;background: #C0392B;display:flex;justify-content: center;align-items: center;'
             ]);
         }
@@ -197,12 +197,12 @@ class __Home_Controller extends Controller
             $update->category_id = $request->Category;
             if ($update->save()) {
                 return back()->with([
-                    'message' => 'List Updated Successfully',
+                    'message' => 'Liste Başarıyla Güncellendi',
                     'style' => 'width:90%;height:80%;font-size:20px;border-radius:10px;color:#fff;background: #0E6655;display:flex;justify-content: center;align-items: center;'
                 ]);
             } else {
                 return back()->with([
-                    'message' => 'updating List Failed',
+                    'message' => 'Liste Güncelleme Başarısız',
                     'style' => 'width:90%;height:80%;font-size:20px;border-radius:10px;color:#fff;background: #C0392B;display:flex;justify-content: center;align-items: center;'
                 ]);
             }
@@ -214,12 +214,12 @@ class __Home_Controller extends Controller
         if (ListsModel::where('id', $id)->count() > 0) {
             ListsModel::find($id)->delete();
             return back()->with([
-                'message' => 'List deleted Successfully',
+                'message' => 'Liste başarıyla silindi',
                 'style' => 'width:90%;height:80%;font-size:20px;border-radius:10px;color:#fff;background: #0E6655;display:flex;justify-content: center;align-items: center;'
             ]);
         }
         return back()->with([
-            'message' => 'deleting list Failed',
+            'message' => 'liste silinemedi',
             'style' => 'width:90%;height:80%;font-size:20px;border-radius:10px;color:#fff;background: #C0392B;display:flex;justify-content: center;align-items: center;'
         ]);
     }
@@ -236,7 +236,7 @@ class __Home_Controller extends Controller
 
         if ($validator->fails()) {
             return back()->with([
-                'message' => 'Upload MP3 file',
+                'message' => 'MP3 dosyasını yükle',
                 'style' => 'width:90%;height:80%;font-size:20px;border-radius:10px;color:#fff;background: #C0392B;display:flex;justify-content: center;align-items: center;'
             ]);
         }
@@ -248,12 +248,12 @@ class __Home_Controller extends Controller
                 'music' => $fileName
             ])) {
                 return back()->with([
-                    'message' => 'Music added Successfully',
+                    'message' => 'Müzik başarıyla eklendi',
                     'style' => 'width:90%;height:80%;font-size:20px;border-radius:10px;color:#fff;background: #0E6655;display:flex;justify-content: center;align-items: center;'
                 ]);
             } else {
                 return back()->with([
-                    'message' => 'adding Music Failed',
+                    'message' => 'Müzik Ekleme Başarısız Oldu',
                     'style' => 'width:90%;height:80%;font-size:20px;border-radius:10px;color:#fff;background: #C0392B;display:flex;justify-content: center;align-items: center;'
                 ]);
             }
@@ -264,12 +264,12 @@ class __Home_Controller extends Controller
         if (__Music_Model::where('id', $id)->count() > 0) {
             __Music_Model::find($id)->delete();
             return back()->with([
-                'message' => 'Music deleted Successfully',
+                'message' => 'Müzik başarıyla silindi',
                 'style' => 'width:90%;height:80%;font-size:20px;border-radius:10px;color:#fff;background: #0E6655;display:flex;justify-content: center;align-items: center;'
             ]);
         }
         return back()->with([
-            'message' => 'deleting Music Failed',
+            'message' => 'Müzik silinemedi',
             'style' => 'width:90%;height:80%;font-size:20px;border-radius:10px;color:#fff;background: #C0392B;display:flex;justify-content: center;align-items: center;'
         ]);
     }
@@ -301,7 +301,7 @@ class __Home_Controller extends Controller
 
         if ($validator->fails()) {
             return back()->with([
-                'message' => 'Upload Image file',
+                'message' => 'Resim dosyasını yükle',
                 'style' => 'width:90%;height:80%;font-size:20px;border-radius:10px;color:#fff;background: #C0392B;display:flex;justify-content: center;align-items: center;'
             ]);
         }
@@ -313,12 +313,12 @@ class __Home_Controller extends Controller
                 'wallpaper' => $fileName
             ])) {
                 return back()->with([
-                    'message' => 'Wallpaper added Successfully',
+                    'message' => 'Duvar kağıdı başarıyla eklendi',
                     'style' => 'width:90%;height:80%;font-size:20px;border-radius:10px;color:#fff;background: #0E6655;display:flex;justify-content: center;align-items: center;'
                 ]);
             } else {
                 return back()->with([
-                    'message' => 'adding Wallpaper Failed',
+                    'message' => 'Duvar Kağıdı Eklenemedi',
                     'style' => 'width:90%;height:80%;font-size:20px;border-radius:10px;color:#fff;background: #C0392B;display:flex;justify-content: center;align-items: center;'
                 ]);
             }
@@ -329,12 +329,12 @@ class __Home_Controller extends Controller
         if (__Wallpaper_Model::where('id', $id)->count() > 0) {
             __Wallpaper_Model::find($id)->delete();
             return back()->with([
-                'message' => 'Wallpaper deleted Successfully',
+                'message' => 'Duvar kağıdı başarıyla silindi',
                 'style' => 'width:90%;height:80%;font-size:20px;border-radius:10px;color:#fff;background: #0E6655;display:flex;justify-content: center;align-items: center;'
             ]);
         }
         return back()->with([
-            'message' => 'deleting Wallpaper Failed',
+            'message' => 'Duvar Kağıdını Silme Başarısız Oldu',
             'style' => 'width:90%;height:80%;font-size:20px;border-radius:10px;color:#fff;background: #C0392B;display:flex;justify-content: center;align-items: center;'
         ]);
     }
@@ -353,13 +353,35 @@ class __Home_Controller extends Controller
         }
         return back();
     }
-    public function __menu()
+    public function __menu(Request $request)
     {
+        $__language__ = "TR";
+        $__title__ = "KAHVALTI";
+        if($request->lang!=null){
+            $__language__ = strtoupper($request->lang);
+        }
+        if($request->title!=null){
+            $__language__ = $request->title;
+        }
+        
+        $__selected__category__ = CategoriesModel::first();
+        $__selected__list__ = ListsModel::where('lang', $__language__)->where('title', 'KAHVALTI')->get();
         $__categories = CategoriesModel::all();
         $__lists = ListsModel::all();
         $__Music = __Music_Model::where('status', 1)->get();
         $__Wallpaper = __Wallpaper_Model::where('status', 1)->get();
-        return view('__menu_page', compact('__categories', '__lists', '__Music', '__Wallpaper'));
+        $__Link = env('HOST_NAME');
+        $lang = $__language__;
+        return view('__menu_page', compact(
+            '__categories',
+            '__lists',
+            '__Music',
+            '__Wallpaper',
+            '__Link',
+            '__selected__category__',
+            '__selected__list__',
+            'lang',
+        ));
     }
     public function __api__List_Edit($id)
     {
@@ -388,7 +410,7 @@ class __Home_Controller extends Controller
 
         if ($validator->fails()) {
             return back()->with([
-                'message' => 'some data missed',
+                'message' => 'bazı veriler kaçırıldı',
                 'style' => 'width:90%;height:80%;font-size:20px;border-radius:10px;color:#fff;background: #C0392B;display:flex;justify-content: center;align-items: center;'
             ]);
         }
@@ -404,23 +426,107 @@ class __Home_Controller extends Controller
         }
 
         if ($__upload__status__) {
-            $__category__update__=CategoriesModel::find($request->_id_);
+            $__category__update__ = CategoriesModel::find($request->_id_);
             $__category__update__->lang = $request->lang;
             $__category__update__->title = $request->title;
-            if($request->file('file') != null){
+            if ($request->file('file') != null) {
                 $__category__update__->image = $fileName;
             }
             if ($__category__update__->save()) {
                 return back()->with([
-                    'message' => 'Category editing Successfully',
+                    'message' => 'Kategori Düzenleme Başarıyla',
                     'style' => 'width:90%;height:80%;font-size:20px;border-radius:10px;color:#fff;background: #0E6655;display:flex;justify-content: center;align-items: center;'
                 ]);
             } else {
                 return back()->with([
-                    'message' => 'editing Category Failed',
+                    'message' => 'Kategori Düzenleme Başarısız',
                     'style' => 'width:90%;height:80%;font-size:20px;border-radius:10px;color:#fff;background: #C0392B;display:flex;justify-content: center;align-items: center;'
                 ]);
             }
         }
+    }
+    public function __get__categories__()
+    {
+        $__selected__category__ = CategoriesModel::first();
+        $__selected__list__ = ListsModel::where('lang', "TR")->where('title', 'KAHVALTI')->get();
+        $__categories = CategoriesModel::where('lang', 'TR')->get();
+        $__lists = ListsModel::all();
+        $__Music = __Music_Model::where('status', 1)->get();
+        $__Wallpaper = __Wallpaper_Model::where('status', 1)->get();
+        $__Link = env('HOST_NAME');
+        $lang = 'TR';
+        return response()->json([
+            '__categories' => $__categories,
+            '__lists' => $__lists,
+            '__Music' => $__Music,
+            '__Wallpaper' => $__Wallpaper,
+            '__Link' => $__Link,
+            '__selected__category__' => $__selected__category__,
+            '__selected__list__' => $__selected__list__,
+            'lang' => $lang,
+        ]);
+    }
+    public function __get__categories__en()
+    {
+        $__selected__category__ = CategoriesModel::first();
+        $__selected__list__ = ListsModel::where('lang', "EN")->where('title', 'Breakfast')->get();
+        $__categories = CategoriesModel::where('lang', 'EN')->get();
+        $__lists = ListsModel::all();
+        $__Music = __Music_Model::where('status', 1)->get();
+        $__Wallpaper = __Wallpaper_Model::where('status', 1)->get();
+        $__Link = env('HOST_NAME');
+        $lang = 'EN';
+        return response()->json([
+            '__categories' => $__categories,
+            '__lists' => $__lists,
+            '__Music' => $__Music,
+            '__Wallpaper' => $__Wallpaper,
+            '__Link' => $__Link,
+            '__selected__category__' => $__selected__category__,
+            '__selected__list__' => $__selected__list__,
+            'lang' => $lang,
+        ]);
+    }
+    public function __get__categories__ar()
+    {
+        $__selected__category__ = CategoriesModel::first();
+        $__selected__list__ = ListsModel::where('lang', "AR")->where('title', 'إفطار')->get();
+        $__categories = CategoriesModel::where('lang', 'AR')->get();
+        $__lists = ListsModel::all();
+        $__Music = __Music_Model::where('status', 1)->get();
+        $__Wallpaper = __Wallpaper_Model::where('status', 1)->get();
+        $__Link = env('HOST_NAME');
+        $lang = 'AR';
+        return response()->json([
+            '__categories' => $__categories,
+            '__lists' => $__lists,
+            '__Music' => $__Music,
+            '__Wallpaper' => $__Wallpaper,
+            '__Link' => $__Link,
+            '__selected__category__' => $__selected__category__,
+            '__selected__list__' => $__selected__list__,
+            'lang' => $lang,
+        ]);
+    }
+    public function __get__category__($title, $lang, $id)
+    {
+        $__selected__category__ = (CategoriesModel::where('title', $title)->where('lang', $lang)->get())[0];
+        $__selected__list__ = ListsModel::where('lang', $lang)->where('category_id', $id)->get();
+        $__categories = CategoriesModel::where('lang', $lang)->get();
+        $__lists = ListsModel::all();
+        $__Music = __Music_Model::where('status', 1)->get();
+        $__Wallpaper = __Wallpaper_Model::where('status', 1)->get();
+        $__Link = env('HOST_NAME');
+        $lang = $lang;
+        return response()->json([
+            '__categories' => $__categories,
+            '__lists' => $__lists,
+            '__Music' => $__Music,
+            '__Wallpaper' => $__Wallpaper,
+            '__Link' => $__Link,
+            '__selected__category__' => $__selected__category__,
+            '__selected__list__' => $__selected__list__,
+            'lang' => $lang,
+        ]);
     }
 }
