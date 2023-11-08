@@ -81,7 +81,7 @@
                                     {{ substr($item->contentBody, 1, 18) }} . . .</td>
                                 <td class="p-3 px-5">{{ $item->price }}</td>
                                 <td class="p-3 px-5">
-                                    <img class="cursor-pointer" onClick="__get__id({{ $item->id }})" style="width: 40px;height:40px;border-radius:40px;" src="{{ session('auth')['HTTP_HOST'].'public/uploads/'.$item->image }}" />
+                                    <img class="cursor-pointer" onClick="__get__id({{ $item->id }})" style="width: 40px;height:40px;border-radius:40px;" src="{{ session('auth')['HTTP_HOST'].'/uploads/'.$item->image }}" />
                                 </td>
                                 <td class="p-3 px-5">{{ $item->type }}</td>
                                 <td class="p-3 px-5">

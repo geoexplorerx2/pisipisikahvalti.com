@@ -40,13 +40,13 @@
             console.log(data)
             $.ajax({
                 type: 'GET'
-                , url: "{{ env('HOST_NAME') }}" + "list/ajax/" + data
+                , url: "{{ env('HOST_NAME') }}" + "/list/ajax/" + data
                 , success: function(result) {
                     console.log(result.id)
                     $('.image__focus').css({
                         'display': 'flex'
                     })
-                    $('#__image__render__section__').html(`<img src="{{ env('HOST_NAME') }}uploads/${result.id}"/>`)
+                    $('#__image__render__section__').html(`<img src="{{ env('HOST_NAME') }}/uploads/${result.id}"/>`)
                 }
             });
         }
