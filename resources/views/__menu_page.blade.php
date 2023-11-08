@@ -72,7 +72,7 @@
                         </div>
                     </div>
                     <div class="w-[60%] p-1 flex justify-center">
-                        <img class="w-[40%] mt-4" src="https://api.hitrooms.com/public/images/logo.png" />
+                        <img class="w-[40%] mt-4" src="https://pisipisikahvalti.com/assets/images/logo.png" />
                     </div>
                     <div>
                         <div class="flex mt-8 mx-5">
@@ -149,13 +149,13 @@
                         }
                     }
                     if (params.id !== false && params.id !== '' && params.title !== false && params.title !== '' && params.lang !== false && params.lang !== '') {
-                        return `/panel/get/category/${params.title}/${params.lang}/${params.id}`
+                        return `/get/category/${params.title}/${params.lang}/${params.id}`
                     } else {
                         if (params.lang !== false && params.lang !== '' && params.lang !== 'TR') {
-                            return '/panel/get/categories/' + params.lang.toLowerCase();
+                            return '/get/categories/' + params.lang.toLowerCase();
                         } else {
 
-                            return '/panel/get/categories/';
+                            return '/get/categories/';
                         }
 
                     }
@@ -165,7 +165,7 @@
                     // return '/panel/get/categories/';
                 } else {
                     // Handle the case where no query parameters are present
-                    return '/panel/get/categories/';
+                    return '/get/categories/';
                 }
 
             };
@@ -174,6 +174,7 @@
                 url: __Query__String__()
                 , type: "GET"
                 , success: function(result) {
+                    console.log('this is result:',result)
                     let __Temp__ = '';
                     let __Temp__2__ = '';
                     let __Temp__4__ = '';
@@ -203,7 +204,7 @@
                         $('#__pre__loader__').css({
                             'display': 'flex'
                         })
-                        window.location.replace(`/panel?title=${data.title}&lang=${data.lang}&id=${data.id}`)
+                        window.location.replace(`/?title=${data.title}&lang=${data.lang}&id=${data.id}`)
                         $('#__pre__loader__').css({
                             'display': 'none'
                         })
@@ -323,12 +324,12 @@
                     __url__.get('lang') !== '' &&
                     __url__.get('id') !== ''
                 ) {
-                    window.location.href = '/panel/?lang=' + $('#languages').val()
+                    window.location.href = '/?lang=' + $('#languages').val()
                 } else {
                     if (__url__.get('lang') === null || __url__.get('lang') === '') {
-                        window.location.href = '/panel/?lang=' + $('#languages').val()
+                        window.location.href = '/?lang=' + $('#languages').val()
                     } else {
-                        window.location.href = '/panel/?lang=' + $('#languages').val()
+                        window.location.href = '/?lang=' + $('#languages').val()
                     }
                 }
                 $('#__pre__loader__').css({
