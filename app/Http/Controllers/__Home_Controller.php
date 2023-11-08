@@ -39,7 +39,7 @@ class __Home_Controller extends Controller
 
     public function __categories_index()
     {
-        $__Categories_data = CategoriesModel::all();
+        $__Categories_data = CategoriesModel::paginate(15);
         return view('__dashboard', compact('__Categories_data'));
     }
 

@@ -54,14 +54,14 @@
                         <tbody>
                             <tr class="border-b">
                                 <th class="text-left p-3 px-5">id</th>
-                                <th class="text-left p-3 px-5">lang</th>
-                                <th class="text-left p-3 px-5">title</th>
-                                <th class="text-left p-3 px-5">contentHeader</th>
-                                <th class="text-left p-3 px-5">contentBody</th>
-                                <th class="text-left p-3 px-5">price</th>
-                                <th class="text-left p-3 px-5">image</th>
-                                <th class="text-left p-3 px-5">type</th>
-                                <th class="text-left p-3 px-5">category</th>
+                                <th class="text-left p-3 px-5">dil</th>
+                                <th class="text-left p-3 px-5">başlık</th>
+                                <th class="text-left p-3 px-5">içerikBaşlığı</th>
+                                <th class="text-left p-3 px-5">içerikGövde</th>
+                                <th class="text-left p-3 px-5">fiyat</th>
+                                <th class="text-left p-3 px-5">görüntü</th>
+                                <th class="text-left p-3 px-5">tip</th>
+                                <th class="text-left p-3 px-5">kategori</th>
                                 <th></th>
                             </tr>
                             @isset($__Lists)
