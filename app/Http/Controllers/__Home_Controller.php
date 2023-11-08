@@ -24,7 +24,7 @@ class __Home_Controller extends Controller
             session()->put('auth', [
                 'email' => $request->email,
                 'password' => $request->password,
-                'HTTP_HOST' => 'http://' . $_SERVER['HTTP_HOST'] . '/panel/'
+                'HTTP_HOST' => 'http://' . $_SERVER['HTTP_HOST'],
             ]);
             return redirect()->route('__dashboard');
         }

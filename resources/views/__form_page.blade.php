@@ -3,7 +3,7 @@
 <div class="w-full min-h-screen absolute top-0 right-0 z-0 flex justify-center items-center">
 	<div class="relative w-[50%] h-[500px] bg-white rounded-md flex">
 		<div class="w-[40%] h-full flex justify-center items-center">
-			<img class="w-[50%]" src="https://api.hitrooms.com/public/images/logo.png" />
+			<img class="w-[50%]" src="https://pisipisikahvalti.com/assets/images/logo.png" />
 		</div>
 		<div class="w-[60%] h-full relative">
 			<form action="{{ url('/auth') }}" method="post" enctype="multipart/form-data">
