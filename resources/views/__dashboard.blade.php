@@ -1,21 +1,27 @@
 @extends('__master')
 @section('__Content')
 <div class="absolute top-0 right-0 w-[80%] min-h-screen flex flex-col">
-    {{-- Add  --}}
-    <div class="hidden category_modal absolute top-0 w-full min-h-screen z-40 bg-black opacity-[.5] justify-center items-center"></div>
+    {{-- Add --}}
+    <div
+        class="hidden category_modal absolute top-0 w-full min-h-screen z-40 bg-black opacity-[.5] justify-center items-center">
+    </div>
     <div class="hidden category_modal absolute top-0 w-full min-h-screen z-50 justify-center items-center">
-        <form class="w-[30%] p-3 bg-slate-100 rounded-md" method="post" action="{{ route('__upload') }}" enctype="multipart/form-data">
+        <form class="w-[30%] p-3 bg-slate-100 rounded-md" method="post" action="{{ route('__upload') }}"
+            enctype="multipart/form-data">
             @csrf
             <div id="MODAL_CLOSE_BTN" class="w-full flex justify-end my-1">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30px" width="30px" version="1.1" id="Capa_1" viewBox="0 0 26 26" xml:space="preserve">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30px"
+                    width="30px" version="1.1" id="Capa_1" viewBox="0 0 26 26" xml:space="preserve">
                     <g>
-                        <path style="fill:#A93226;" d="M21.125,0H4.875C2.182,0,0,2.182,0,4.875v16.25C0,23.818,2.182,26,4.875,26h16.25   C23.818,26,26,23.818,26,21.125V4.875C26,2.182,23.818,0,21.125,0z M18.78,17.394l-1.388,1.387c-0.254,0.255-0.67,0.255-0.924,0   L13,15.313L9.533,18.78c-0.255,0.255-0.67,0.255-0.925-0.002L7.22,17.394c-0.253-0.256-0.253-0.669,0-0.926l3.468-3.467   L7.221,9.534c-0.254-0.256-0.254-0.672,0-0.925l1.388-1.388c0.255-0.257,0.671-0.257,0.925,0L13,10.689l3.468-3.468   c0.255-0.257,0.671-0.257,0.924,0l1.388,1.386c0.254,0.255,0.254,0.671,0.001,0.927l-3.468,3.467l3.468,3.467   C19.033,16.725,19.033,17.138,18.78,17.394z" />
+                        <path style="fill:#A93226;"
+                            d="M21.125,0H4.875C2.182,0,0,2.182,0,4.875v16.25C0,23.818,2.182,26,4.875,26h16.25   C23.818,26,26,23.818,26,21.125V4.875C26,2.182,23.818,0,21.125,0z M18.78,17.394l-1.388,1.387c-0.254,0.255-0.67,0.255-0.924,0   L13,15.313L9.533,18.78c-0.255,0.255-0.67,0.255-0.925-0.002L7.22,17.394c-0.253-0.256-0.253-0.669,0-0.926l3.468-3.467   L7.221,9.534c-0.254-0.256-0.254-0.672,0-0.925l1.388-1.388c0.255-0.257,0.671-0.257,0.925,0L13,10.689l3.468-3.468   c0.255-0.257,0.671-0.257,0.924,0l1.388,1.386c0.254,0.255,0.254,0.671,0.001,0.927l-3.468,3.467l3.468,3.467   C19.033,16.725,19.033,17.138,18.78,17.394z" />
                     </g>
                 </svg>
             </div>
             <div class="w-full">
                 <label for="language" class="block mb-2 text-sm font-medium text-[#000]">Bir dil seçin</label>
-                <select name="lang" id="language" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <select name="lang" id="language"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     <option selected>Bir Dil Seçin</option>
                     <option value="TR">TR</option>
                     <option value="EN">EN</option>
@@ -24,16 +30,22 @@
             </div>
             <div class="w-full mt-3">
                 <label for="default-input" class="block mb-2 text-sm font-medium text-[#000]">Başlık</label>
-                <input name="title" type="text" id="default-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <input name="title" type="text" id="default-input"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
             </div>
             <div class="w-full mt-3">
                 <div class="flex items-center justify-center w-full">
-                    <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                    <label for="dropzone-file"
+                        class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
                         <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                            <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                            <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
                             </svg>
-                            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Yüklemek için tıklayın</p>
+                            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span
+                                    class="font-semibold">Yüklemek için tıklayın</p>
                             <p class="text-xs text-gray-500 dark:text-gray-400">PNG, JPG veya JPEG</p>
                         </div>
                         <input name="file" id="dropzone-file" type="file" class="hidden" />
@@ -41,23 +53,28 @@
                 </div>
             </div>
             <div class="w-full my-3">
-                <button type="submit" class="text-white bg-[#3b5998] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-5 py-5 text-center flex justify-center items-center dark:focus:ring-[#3b5998]/55 w-full">
+                <button type="submit"
+                    class="text-white bg-[#3b5998] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-5 py-5 text-center flex justify-center items-center dark:focus:ring-[#3b5998]/55 w-full">
                     . . . KATEGORİ EKLE . . .
                 </button>
             </div>
         </form>
     </div>
     {{ session('__Categories_data__edit__') }}
-    @if(session('__Categories_data__edit__')!=null)
-        @include('__category_edit')
+    @if (session('__Categories_data__edit__') != null)
+    @include('__category_edit')
     @endif
-    <div class="image__focus hidden absolute top-0 w-full min-h-screen z-50 justify-center items-center bg-[rgba(0,0,0,0.7)]">
+    <div
+        class="image__focus hidden absolute top-0 w-full min-h-screen z-50 justify-center items-center bg-[rgba(0,0,0,0.7)]">
         <div class="bg-white rounded-xl p-4">
             <div class="text-white">
-                <svg id="__close__btn__food__image__" class="mb-5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" height="30px" width="30px" version="1.1" id="Layer_1" viewBox="0 0 512 512" xml:space="preserve">
+                <svg id="__close__btn__food__image__" class="mb-5" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" height="30px" width="30px" version="1.1"
+                    id="Layer_1" viewBox="0 0 512 512" xml:space="preserve">
                     <g>
                         <g>
-                            <polygon points="512,59.076 452.922,0 256,196.922 59.076,0 0,59.076 196.922,256 0,452.922 59.076,512 256,315.076 452.922,512     512,452.922 315.076,256   " />
+                            <polygon
+                                points="512,59.076 452.922,0 256,196.922 59.076,0 0,59.076 196.922,256 0,452.922 59.076,512 256,315.076 452.922,512     512,452.922 315.076,256   " />
                         </g>
                     </g>
                 </svg>
@@ -65,10 +82,11 @@
             </div>
         </div>
     </div>
-    <div class="__delete__confirmation__ absolute top-0 w-full min-h-screen z-40 hidden justify-center items-center bg-[rgba(0,0,0,0.7)]">
+    <div
+        class="__delete__confirmation__ absolute top-0 w-full min-h-screen z-40 hidden justify-center items-center bg-[rgba(0,0,0,0.7)]">
 
     </div>
-    {{-- List Of Categories  --}}
+    {{-- List Of Categories --}}
     <div class="w-full">
         <div class="w-full h-[50px] bg-[#1A5276] flex justify-between items-center">
             <div class="w-[20%] text-white text-base px-10">KATEGORİ EKLE</div>
@@ -82,7 +100,7 @@
     <div class="w-full py-5 flex-1 flex flex-col justify-center items-center">
         <div class="w-[97%] bg-white flex-1 flex flex-col rounded-md">
             <!-- component -->
-            <div class="text-gray-900 bg-gray-200 flex-1 rounded-md">
+            <div class="text-gray-900 bg-gray-200 flex-1 rounded-md relative">
                 <div class="w-full h-[100px] flex justify-end">
                     <button id="MODAL_OPEN_BTN" class="bg-[#075A8F] text-white h-[50%] px-5 m-5 rounded-md">
                         KATEGORİ EKLE
@@ -99,24 +117,31 @@
                                 <th></th>
                             </tr>
                             @isset($__Categories_data)
-                            @if(count($__Categories_data)==0)
+                            @if (count($__Categories_data) == 0)
                             @else
                             @php
-                            $counter=1
+                            $counter = 1;
                             @endphp
-                            @foreach($__Categories_data as $item)
+                            @foreach ($__Categories_data as $item)
                             <tr class="border-b hover:bg-orange-100 bg-gray-100">
                                 <td class="p-3 px-5">{{ $counter }}</td>
                                 <td class="p-3 px-5">{{ $item->lang }}</td>
                                 <td class="p-3 px-5">{{ $item->title }}</td>
-                                <td class="p-3 px-5"><img class="cursor-pointer" onClick="__get__id__category__({{ $item->id }})" style="width: 5%;height:5%;border-radius:10px;" src="{{ session('auth')['HTTP_HOST'].'/uploads/'.$item->image }}" /></td>
+                                <td class="p-3 px-5"><img class="cursor-pointer"
+                                        onClick="__get__id__category__({{ $item->id }})"
+                                        style="width: 5%;height:5%;border-radius:10px;"
+                                        src="{{ session('auth')['HTTP_HOST'] . '/uploads/' . $item->image }}" />
+                                </td>
                                 <td class="">
-                                    <a href="{{ route('__Category_edit__',['id'=>$item->id]) }}"><button type="button" class="text-sm bg-[#0080ff] text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Düzenle</button></a>
-                                    <button onclick="__delete__category__function__({{ $item->id }})" type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Sil</button>
+                                    <a href="{{ route('__Category_edit__', ['id' => $item->id]) }}"><button
+                                            type="button"
+                                            class="text-sm bg-[#0080ff] text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Düzenle</button></a>
+                                    <button onclick="__delete__category__function__({{ $item->id }})" type="button"
+                                        class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Sil</button>
                                 </td>
                             </tr>
                             @php
-                            $counter+=1
+                            $counter += 1;
                             @endphp
                             @endforeach
                             @endif
@@ -124,9 +149,19 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="w-full flex justify-center absolute bottom-24">
+                    <ul class="w-full flex justify-center list-none">
+                        @for ($i = 1; $i <= intval($__Categories_data->lastPage()); $i++)
+                            <li class="w-[30px] h-[30px] rounded-full cursor-pointer hover:bg-[#0B5345] bg-[#17202A] text-white flex justify-center items-center mr-2">
+                                {{ $i }}
+                            </li>
+                        @endfor                    </ul>
+                </div>
             </div>
         </div>
     </div>
 </div>
 @include('__menu')
 @endsection
+
+{{-- {{ $__Categories_data->links() }} --}}
