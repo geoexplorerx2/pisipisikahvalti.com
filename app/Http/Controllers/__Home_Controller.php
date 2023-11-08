@@ -96,7 +96,7 @@ class __Home_Controller extends Controller
 
     public function __List_show()
     {
-        $__Lists = ListsModel::all();
+        $__Lists = ListsModel::paginate(30);
         $__categories = CategoriesModel::all();
         return view('__list_page', compact('__Lists', '__categories'));
     }
