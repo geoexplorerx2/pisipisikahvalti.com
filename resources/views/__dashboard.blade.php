@@ -149,13 +149,14 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="w-full flex justify-center absolute bottom-24">
+                <div class="w-full flex justify-center absolute bottom-10">
                     <ul class="w-full flex justify-center list-none">
                         @for ($i = 1; $i <= intval($__Categories_data->lastPage()); $i++)
                             <li class="w-[30px] h-[30px] rounded-full cursor-pointer hover:bg-[#0B5345] bg-[#17202A] text-white flex justify-center items-center mr-2">
                                 {{ $i }}
                             </li>
-                        @endfor                    </ul>
+                        @endfor                    
+                    </ul>
                 </div>
             </div>
         </div>
