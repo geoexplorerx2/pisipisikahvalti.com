@@ -81,7 +81,7 @@
                             <tr class="border-b hover:bg-orange-100 bg-gray-100">
                                 <td class="p-3 px-5">{{ $counter }}</td>
                                 <td class="p-3 px-5">{{ $item->wallpaper }}</td>
-                                <td class="p-3 px-5"><img class="cursor-pointer" onClick="__get__id__wallpaper__({{ $item->id }})" style="width: 40px;height:40px;border-radius:40px;" src="{{ session('auth')['HTTP_HOST'].'public/uploads/'.$item->wallpaper }}" />
+                                <td class="p-3 px-5"><img class="cursor-pointer" onClick="__get__id__wallpaper__({{ $item->id }})" style="width: 40px;height:40px;border-radius:40px;" src="{{ session('auth')['HTTP_HOST'].'/uploads/'.$item->wallpaper }}" />
                                 <td class="">
                                     <a href="{{ route('__Wallpaper_Status', ['id' => $item->id]) }}"><button type="button" class="text-sm bg-[#1F618D]  text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">{{ $item->status==true ? 'Seçildi':'Seç' }}</button></a>
                                     <button onClick="__delete__wallpaper__function__({{ $item->id }})" type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Sil</button>

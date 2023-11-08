@@ -40,52 +40,52 @@
             console.log(data)
             $.ajax({
                 type: 'GET'
-                , url: "{{ env('HOST_NAME') }}" + "list/ajax/" + data
+                , url: "{{ env('HOST_NAME') }}" + "/list/ajax/" + data
                 , success: function(result) {
                     console.log(result.id)
                     $('.image__focus').css({
                         'display': 'flex'
                     })
-                    $('#__image__render__section__').html(`<img src="{{ env('HOST_NAME') }}uploads/${result.id}"/>`)
+                    $('#__image__render__section__').html(`<img src="{{ env('HOST_NAME') }}/uploads/${result.id}"/>`)
                 }
             });
         }
         const __get__id__category__ = (data) => {
             $.ajax({
                 type: 'GET'
-                , url: "{{ env('HOST_NAME') }}" + "category/ajax/" + data
+                , url: "{{ env('HOST_NAME') }}" + "/category/ajax/" + data
                 , success: function(result) {
                     console.log(result.id)
                     $('.image__focus').css({
                         'display': 'flex'
                     })
-                    $('#__image__render__section__').html(`<img src="{{ env('HOST_NAME') }}uploads/${result.id}"/>`)
+                    $('#__image__render__section__').html(`<img src="{{ env('HOST_NAME') }}/uploads/${result.id}"/>`)
                 }
             });
         }
         const __get__id__wallpaper__ = (data) => {
             $.ajax({
                 type: 'GET'
-                , url: "{{ env('HOST_NAME') }}" + "wallpaper/ajax/" + data
+                , url: "{{ env('HOST_NAME') }}" + "/wallpaper/ajax/" + data
                 , success: function(result) {
                     console.log(result.id)
                     $('.image__focus').css({
                         'display': 'flex'
                     })
-                    $('#__image__render__section__').html(`<img style="width:800px;" src="{{ env('HOST_NAME') }}uploads/${result.id}"/>`)
+                    $('#__image__render__section__').html(`<img style="width:800px;" src="{{ env('HOST_NAME') }}/uploads/${result.id}"/>`)
                 }
             });
         }
         const __delete__btn__category__ = (data) => {
             $.ajax({
                 type: 'GET'
-                , url: "{{ env('HOST_NAME') }}" + "wallpaper/ajax/" + data
+                , url: "{{ env('HOST_NAME') }}" + "/wallpaper/ajax/" + data
                 , success: function(result) {
                     console.log(result.id)
                     $('.image__focus').css({
                         'display': 'flex'
                     })
-                    $('#__image__render__section__').html(`<img style="width:800px;" src="{{ env('HOST_NAME') }}uploads/${result.id}"/>`)
+                    $('#__image__render__section__').html(`<img style="width:800px;" src="{{ env('HOST_NAME') }}/uploads/${result.id}"/>`)
                 }
             });
         }
@@ -96,7 +96,7 @@
                     <div class="text-xl p-5">Bu Kaydı Kaldıracağınızdan Emin misiniz ?</div>
                     <div class="flex justify-between px-5">
                         <button id="__close__btn__confirmation__" type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">iptal</button>
-                        <a href="${"{{ env('HOST_NAME') }}"}categories/destroy/${data}"><button type="button" class="text-sm mr-5 bg-[#1B4F72] hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">Evet</button></a>
+                        <a href="${"{{ env('HOST_NAME') }}"}/categories/destroy/${data}"><button type="button" class="text-sm mr-5 bg-[#1B4F72] hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">Evet</button></a>
                     </div>
                 </div>
                 `
@@ -118,7 +118,7 @@
                     <div class="text-xl p-5">Bu Kaydı Kaldıracağınızdan Emin misiniz ?</div>
                     <div class="flex justify-between px-5">
                         <button id="__close__btn__confirmation__" type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">iptal</button>
-                        <a href="${"{{ env('HOST_NAME') }}"}lists/destroy/${data}"><button type="button" class="text-sm mr-5 bg-[#1B4F72] hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">Evet</button></a>
+                        <a href="${"{{ env('HOST_NAME') }}"}/lists/destroy/${data}"><button type="button" class="text-sm mr-5 bg-[#1B4F72] hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">Evet</button></a>
                     </div>
                 </div>
                 `
@@ -139,7 +139,7 @@
                     <div class="text-xl p-5">Bu Kaydı Kaldıracağınızdan Emin misiniz ?</div>
                     <div class="flex justify-between px-5">
                         <button id="__close__btn__confirmation__" type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">iptal</button>
-                        <a href="${"{{ env('HOST_NAME') }}"}wallpaper/destroy/${data}"><button type="button" class="text-sm mr-5 bg-[#1B4F72] hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">Evet</button></a>
+                        <a href="${"{{ env('HOST_NAME') }}"}/wallpaper/destroy/${data}"><button type="button" class="text-sm mr-5 bg-[#1B4F72] hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">Evet</button></a>
                     </div>
                 </div>
                 `
@@ -160,7 +160,7 @@
                     <div class="text-xl p-5">Bu Kaydı Kaldıracağınızdan Emin misiniz ?</div>
                     <div class="flex justify-between px-5">
                         <button id="__close__btn__confirmation__" type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">iptal</button>
-                        <a href="${"{{ env('HOST_NAME') }}"}music/destroy/${data}"><button type="button" class="text-sm mr-5 bg-[#1B4F72] hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">Evet</button></a>
+                        <a href="${"{{ env('HOST_NAME') }}"}/music/destroy/${data}"><button type="button" class="text-sm mr-5 bg-[#1B4F72] hover:bg-red-700 text-white py-2 px-10 rounded focus:outline-none focus:shadow-outline">Evet</button></a>
                     </div>
                 </div>
                 `

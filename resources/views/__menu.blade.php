@@ -1,7 +1,7 @@
 <div class="w-[20%] absolute top-0 left-0 min-h-screen z-30 bg-[#1A5276] border-r-[1px] border-[#fff]">
     <div class="w-full flex justify-center">
         <div class="w-[200px] h-[200px] flex justify-center items-center rounded-full bg-white my-5">
-            <img class="w-[60%]" src="https://api.hitrooms.com/public/images/logo.png" />
+            <img class="w-[60%]" src="https://pisipisikahvalti.com/assets/images/logo.png" />
         </div>
     </div>
     <div class="w-full">
